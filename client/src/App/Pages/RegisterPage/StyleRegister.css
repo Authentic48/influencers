@@ -1,0 +1,12 @@
+.register_svg{
+    height: 500px;
+    width: 500px;
+}
+.register_left{
+    flex: 0.5;
+}
+.register_right{
+    flex: 0.5;
+    height: 91vh;
+    background-color: #d5eafd;
+}

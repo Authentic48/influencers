@@ -97,9 +97,21 @@ a{
 
 .btn_group{
   margin-top: 3rem;
-  justify-content: center;
+  align-items: center;
   display: flex;
+  flex-direction: column;
 }
 .btn_plus_padding_2{
-  padding: 14px 50px;
+  width: 80%;
+}
+.auth_text{
+  margin-top: 2rem;
+}
+.auth_text > span{
+  color: #F294C0;
+  font-weight: bold;
+  font-size: 17px;
+  text-decoration: underline;
+  cursor: pointer;
+  margin-left: 6px;
 }
