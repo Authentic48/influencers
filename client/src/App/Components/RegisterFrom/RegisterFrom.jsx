@@ -34,10 +34,7 @@ export default function RegisterForm() {
                          <FromField name='password' label='Password' placeholder='********' />
                          <FormControlLabel
                             control={
-                            <Checkbox                               
-                                name="checkedB"
-                                color="primary"
-                            />
+                               <Checkbox name="checkedB" color="primary"/>
                             }
                             label="remember me"
                         />
@@ -46,7 +43,7 @@ export default function RegisterForm() {
                                  Register
                              </button>
                              <p className='auth_text'> 
-                                you already have account? 
+                                You already have account! 
                                 <span onClick={()=>history.push('/login')} >Login</span> 
                              </p>
                          </div>
