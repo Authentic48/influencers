@@ -1,15 +1,10 @@
 import './App.css';
+import Navbar from './App/Layouts/Navbar/Navbar';
 
 function App() {
   return (
     <div className="App">
-     <h1>Hello world</h1>
-     <button className='btn_main'>
-       hello it is me
-     </button>
-     <button className='btn_secondary'>
-       hello it is me
-     </button>
+      <Navbar />
     </div>
   );
 }
