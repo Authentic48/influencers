@@ -4,6 +4,8 @@
     background-color: #2168A6;
     color: white !important;
     top: 0px;
+    position: fixed;
+    z-index: 1000;
 }
 .logo{
     margin: 0 60px;

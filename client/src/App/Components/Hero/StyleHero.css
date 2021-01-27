@@ -1,8 +1,11 @@
 .hero{
-    height: 90vh;
-    width: 100%;
+    height: 98vh;
+    width: 98%;
+    margin-left: 1%;
     background-color: #dbeeff;
     color: #2168A6 !important;
+    border-bottom-left-radius: 250px;
+    border-bottom-right-radius: 250px;
 }
 .main_title{
     font-size: 35px;
