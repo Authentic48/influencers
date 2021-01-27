@@ -6,10 +6,10 @@
     top: 0px;
 }
 .logo{
-    margin: 0 30px;
+    margin: 0 60px;
     font-size: 20px;
 }
-.links{ margin-right: 50px;}
+.links{ margin-right: 60px;}
 .link{
     font-size: 18px;
     margin: 0 35px;
@@ -17,8 +17,7 @@
     color: white !important;
     padding: 7px 0px;
     border-bottom: 3px solid #2168A6;
+    transition: all ease-in 0.2s;
 }
-.link:hover{
-    border-bottom: 3px solid #F294C0;
-}
+.link:hover{ border-bottom: 3px solid #F294C0;}
 .home_link{ width: 60px;}

@@ -26,6 +26,12 @@ a{
   color: black;
   cursor: pointer;
 }
+.mr_right{
+  margin-right: 2rem;
+}
+.mr_left{
+  margin-left: 2rem;
+}
 
 .flex{
   display: flex;
@@ -87,4 +93,13 @@ a{
 .btn_secondary:hover{
   background-color: #2168A6;
 
+}
+
+.btn_group{
+  margin-top: 3rem;
+  justify-content: center;
+  display: flex;
+}
+.btn_plus_padding_2{
+  padding: 14px 50px;
 }
