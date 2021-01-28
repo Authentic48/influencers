@@ -1,27 +1,29 @@
 import React from 'react'
 
-import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 import FacebookIcon from '@material-ui/icons/Facebook';
 import InstagramIcon from '@material-ui/icons/Instagram';
 import YouTubeIcon from '@material-ui/icons/YouTube';
+import { useHistory } from 'react-router-dom'
 
 import './StyleCard.css'
 
-export default function Card() {
-    const image ='https://pbs.twimg.com/profile_images/1301997893923020805/irG2Vq52_400x400.jpg'
+export default function Card({user}) {
+ 
+    const history = useHistory()
+
     return (
         <div className='card'>
          <div className='card_image_container'>
-             <img src={image} alt='Influencer Name' />
+             <img src={user.image} alt={`get in business with ${user.name} `} />
          </div>
          <div className='card_detail flexCol'>
-            <h3 className='influencer_name'>Mohamed Youssef</h3>
+            <h3 className='influencer_name'>{user.name}</h3>
             <h3 className='influencer_price'> 
-                500 EGP <span> per 3 stories</span>
+                {user.price} EGP <span> per 3 stories</span>
             </h3>
          </div>
          <div className='flexCol'>
-             <button className='btn_secondary2 flex'>
+             <button onClick={() => history.push(`/user-profile/${user.id}`)} className='btn_secondary2 flex'>
                  View Profile
              </button>
              <div className='line' />
@@ -31,7 +33,7 @@ export default function Card() {
                 <div className='icon_container flexCol instagram'>
                     <InstagramIcon fontSize='large' style={{color:'white'}} />
                 </div>
-                <h3>12.8K</h3>
+                <h3>{user.followers}</h3>
                 <p className='small_text'>Followers</p>
              </div>
 
@@ -39,16 +41,16 @@ export default function Card() {
                 <div className='icon_container  flexCol facebook'>
                     <FacebookIcon fontSize='large' style={{color:'white'}} />
                 </div>
-                <h3>12.8K</h3>
-                <p className='small_text'>Followers</p>
+                <h3>{user.friends}</h3>
+                <p className='small_text'>Friends</p>
              </div>
 
              <div className='flexCol'>
                 <div className='icon_container flexCol youtube'>
                     <YouTubeIcon fontSize='large' style={{color:'white'}} />
                 </div>
-                <h3>12.8K</h3>
-                <p className='small_text'>Followers</p>
+                <h3>{user.subscribers}K</h3>
+                <p className='small_text'>Subscribers</p>
              </div>
 
              
