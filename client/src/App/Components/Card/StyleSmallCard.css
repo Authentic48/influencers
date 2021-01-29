@@ -1,0 +1,33 @@
+.social_media{
+    background-color: #ffff;
+    width: 210px;
+    height: 170px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 30px 100px 30px rgba(118,118,197,0.1);
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+}
+.social_media_name{
+    font-family: 'Bad Script', cursive;
+    margin-top: 1rem;
+}
+.social_media_count{
+    color: #2E3C8C;
+}
+.small_text_influence{
+    margin-top: 0.5rem;
+    color: #2168A6 !important;
+    font-weight: bold !important;
+}
+.social_media > h3{
+    color: #94c1eb;
+    cursor: pointer;
+    font-size: 15px;
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+}
+
+.social_media > h3:hover{
+    color: #afcce7;
+}

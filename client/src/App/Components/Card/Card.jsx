@@ -49,7 +49,7 @@ export default function Card({user}) {
                 <div className='icon_container flexCol youtube'>
                     <YouTubeIcon fontSize='large' style={{color:'white'}} />
                 </div>
-                <h3>{user.subscribers}K</h3>
+                <h3>{user.subscribers}</h3>
                 <p className='small_text'>Subscribers</p>
              </div>
 

@@ -15,7 +15,8 @@ const influencer =[
             "sport",
         ],
         location: 'Egypt, Alexandria',
-        instagramAccount:'@saraSabry98'
+        instagramAccount:'@saraSabry98',
+        background: 'https://assets.cairo360.com/app/uploads/2019/03/Hiafa-1024x507.jpg'
     },
     {
         id: '2',
@@ -35,7 +36,8 @@ const influencer =[
             "Movies"
         ],
         location: 'Egypt, Cairo',
-        instagramAccount:'@MohamedEmam'
+        instagramAccount:'@MohamedEmam',
+        background:'https://scontent-hel3-1.xx.fbcdn.net/v/t1.0-9/s960x960/120216693_4879587872081536_8745049105620765237_o.jpg?_nc_cat=105&ccb=2&_nc_sid=e3f864&_nc_eui2=AeH3ImhoB0uzT2addfnBtaFClRydLbxrv4yVHJ0tvGu_jGrWkX557mRJOHi8LoAqeWY93Z-N3GAxis3jU5zeNrB2&_nc_ohc=UpvnYZ6A984AX8TiVxs&_nc_ht=scontent-hel3-1.xx&tp=7&oh=d2cd2385d86804472dbed8e536322981&oe=6039063C'
     },
     {
         id: '3',
@@ -74,7 +76,8 @@ const influencer =[
             "Movies"
         ],
         location: 'Egypt, Cairo',
-        instagramAccount:'@SaharFoad1'
+        instagramAccount:'@SaharFoad1',
+        background:'https://scontent-hel3-1.xx.fbcdn.net/v/t1.0-9/125985998_210546283774742_1806659188860626699_o.jpg?_nc_cat=100&ccb=2&_nc_sid=e3f864&_nc_eui2=AeH5b_IP3KW7L04ZiVhn7hetd-5NqcGQCHd37k2pwZAId28EwsUKvMN1s12WrrqXQ_yZSnFDADkaxSBcBrz1Zgco&_nc_ohc=d9mnnNjqggoAX-2Upmj&_nc_ht=scontent-hel3-1.xx&oh=c4720a6f6fbec1c908298442a6b9b1cc&oe=6038ABED'
     },
     {
         id: '5',
@@ -94,7 +97,8 @@ const influencer =[
             "Movies"
         ],
         location: 'Egypt, Cairo',
-        instagramAccount:'@SaharFoad1'
+        instagramAccount:'@SaharFoad1',
+        background:'https://scontent-hel3-1.xx.fbcdn.net/v/t1.0-9/133688653_10159154982699577_4278593437286830187_o.jpg?_nc_cat=103&ccb=2&_nc_sid=e3f864&_nc_eui2=AeE9-aAYPGWvzjO0lw_HO068OYZPikUXtvA5hk-KRRe28GR8YFaTcYEiiivc__tGA9IgQomfa6nVGwNxiCcdizxU&_nc_ohc=7A96A1sNfBsAX9qLk5T&_nc_ht=scontent-hel3-1.xx&oh=aa40041c36667bb937f117e1110de214&oe=6039528C'
     },
     {
         id: '6',
@@ -115,7 +119,8 @@ const influencer =[
             "sport"
         ],
         location: 'Egypt, Cairo',
-        instagramAccount:'@Helmy_Elsaeed3'
+        instagramAccount:'@Helmy_Elsaeed3',
+        background:'https://scontent-hel3-1.xx.fbcdn.net/v/t1.0-9/131987916_5007944672579256_7201919578525581621_o.jpg?_nc_cat=104&ccb=2&_nc_sid=e3f864&_nc_eui2=AeEDERc92PQRWpt--YZH2shqoz2du8y3kByjPZ27zLeQHKN_-oaYv06MvHtJajYAcOk4X2F5mcryd4_2IOvXUKBQ&_nc_ohc=5BJRIKAr4kUAX_SkJhy&_nc_ht=scontent-hel3-1.xx&oh=2f1697b6d7331c2bb2d8d5c5148dd1e1&oe=60365D1B'
     },
 ]
 
