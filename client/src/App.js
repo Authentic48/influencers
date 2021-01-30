@@ -1,6 +1,7 @@
 import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './App/Layouts/Navbar/Navbar';
+import CreateProfilePage from './App/Pages/CreateProfilePage/CreateProfilePage';
 import HomePage from './App/Pages/HomePage/HomePage';
 import InfluencerDetailPage from './App/Pages/InfluencerDetailPage/InfluencerDetailPage';
 import InfluencerPage from './App/Pages/InfluencerPage/InfluencerPage';
@@ -17,6 +18,7 @@ function App() {
         <Route path='/register' exact component={RegisterPage} />
         <Route path='/influencer' exact component={InfluencerPage} />
         <Route path ='/user-profile/:id' component={InfluencerDetailPage} />
+        <Route path='/create-profile' component={CreateProfilePage} />
        </Switch>
     </div>
   );
