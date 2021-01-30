@@ -13,6 +13,8 @@ const validationSchema = Yup.object({
     name: Yup.string().required(),
     email: Yup.string().required().email(),
     password: Yup.string().required().min(5),
+    confirmPassword: Yup.string()
+    .oneOf([Yup.ref('password'), null], 'Passwords must match')
   });
 
 export default function RegisterForm() {
@@ -21,22 +23,23 @@ export default function RegisterForm() {
 
     return (
         <div className='flexCol '>
-            <h2 style={{color :'#2168A6'}}>Welcome to Website Name </h2>
+            <h2 style={{color :'#2168A6', marginTop: '8rem',}}>Welcome to Website Name </h2>
             <Formik
                 validationSchema={validationSchema}
-                initialValues={{ email: '', password:'', name:''}}
+                initialValues={{ email: '', password:'', name:'', confirmPassword: ''}}
                 onSubmit={(values) => console.log(values)}
             >
                  {({ dirty,isSubmitting, isValid })=>(
                      <Form className='register_form'>
-                          <FromField name='name' label='Name' placeholder='Mohamed Youssef' />
-                         <FromField name='email' label='Email' placeholder='example@example.com' />
-                         <FromField name='password' label='Password' placeholder='********' />
-                         <FormControlLabel
-                            control={
-                               <Checkbox name="checkedB" color="primary"/>
-                            }
-                            label="remember me"
+                        <FromField name='name' label='Name' placeholder='Mohamed Youssef' />
+                        <FromField name='email' label='Email' placeholder='example@example.com' />
+                        <FromField name='password' label='Password' placeholder='********' />
+                        <FromField name='confirmPassword' label='Confirm Password' placeholder='********' />
+                        <FormControlLabel
+                        control={
+                            <Checkbox name="checkedB" color="primary"/>
+                        }
+                        label="remember me"
                         />
                          <div className='btn_group'>
                              <button className='btn_secondary btn_plus_padding_2'>

@@ -71,7 +71,7 @@ export default function InfluencerDetailPage({match}) {
                         Add to Favorite
                         <FavoriteBorderIcon />
                     </button>
-                    <button className='flex report_btn'>
+                    <button onClick={()=> history.push(`/report-influencer/${user.name}`)} className='flex report_btn'>
                         Report Influencer
                         <ReportProblemIcon />
                     </button>

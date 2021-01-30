@@ -9,8 +9,8 @@ export default function Navbar() {
             <div className='links flex'>
                 <Link to='/'  className='link home_link'>Home </Link >
                 <Link to='/influencer' className='link'>Influencer</Link >
+                <Link to='/cart' className='link'>Favorites</Link >
                 <Link to='/login' className='link home_link' >Login</Link >
-                <Link to='/contact' className='link'>Contact Us</Link >
             </div>
         </div>
     )

@@ -8,6 +8,7 @@ import InfluencerDetailPage from './App/Pages/InfluencerDetailPage/InfluencerDet
 import InfluencerPage from './App/Pages/InfluencerPage/InfluencerPage';
 import LoginPage from './App/Pages/LoginPage/LoginPage';
 import RegisterPage from './App/Pages/RegisterPage/RegisterPage'
+import ReportPage from './App/Pages/ReportUserPage/ReportUserPage';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path ='/user-profile/:id' component={InfluencerDetailPage} />
         <Route path='/create-profile' component={CreateProfilePage} />
         <Route path='/cart' component={CartPage} />
+        <Route path='/report-influencer/:keyword' component={ReportPage} />
        </Switch>
     </div>
   );
