@@ -1,5 +1,8 @@
 import React from 'react'
 import influencer from '../../API/influencer'
+import { useDispatch } from 'react-redux'
+import { useHistory } from 'react-router-dom'
+import { addItemToCart } from '../../Redux/Cart/cartAction';
 
 import './style.css'
 
@@ -11,7 +14,15 @@ import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 import SmallCard from '../../Components/Card/SmallCard';
 
 export default function InfluencerDetailPage({match}) {
+
     const user = influencer.find(i => i.id === match.params.id)
+    const dispatch = useDispatch()
+    const history = useHistory()
+
+    const handleAddToFavorite = () =>{
+        dispatch(addItemToCart(user))
+        history.push('/cart')
+    }
 
     return (
         <div className='InfluencerDetailPage'>
@@ -37,7 +48,7 @@ export default function InfluencerDetailPage({match}) {
                         <div className='weird_container'>
                             {
                                 user.category.map(category=>(
-                                    <div className='weird'>
+                                    <div category={category} className='weird'>
                                         {category}
                                     </div>
 
@@ -56,7 +67,7 @@ export default function InfluencerDetailPage({match}) {
                         Send Message
                         <ChatIcon />
                     </button>
-                    <button className='flex favorite_btn'>
+                    <button onClick={() =>handleAddToFavorite()} className='flex favorite_btn'>
                         Add to Favorite
                         <FavoriteBorderIcon />
                     </button>
