@@ -1,7 +1,7 @@
 import React from 'react'
 import './StyleMessageSender.css'
-import TelegramIcon from '@material-ui/icons/Telegram';
-import TimerIcon from '@material-ui/icons/Timer';
+// import TelegramIcon from '@material-ui/icons/Telegram';
+// import TimerIcon from '@material-ui/icons/Timer';
 import EmojiEmotionsIcon from '@material-ui/icons/EmojiEmotions';
 import MicNoneIcon from '@material-ui/icons/MicNone';
 

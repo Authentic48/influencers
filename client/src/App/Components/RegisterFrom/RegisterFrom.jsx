@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form }  from 'formik'
 import { useHistory } from 'react-router-dom'
 import * as Yup from 'yup'
-import FromField from '../FromField/FromField';
+import FromInput from '../FromField/FormInput';
 
 import { Checkbox, FormControlLabel } from '@material-ui/core';
 
@@ -31,10 +31,10 @@ export default function RegisterForm() {
             >
                  {({ dirty,isSubmitting, isValid })=>(
                      <Form className='register_form'>
-                        <FromField name='name' label='Name' placeholder='Mohamed Youssef' />
-                        <FromField name='email' label='Email' placeholder='example@example.com' />
-                        <FromField name='password' label='Password' placeholder='********' />
-                        <FromField name='confirmPassword' label='Confirm Password' placeholder='********' />
+                        <FromInput name='name' label='Name' placeholder='Mohamed Youssef' />
+                        <FromInput name='email' label='Email' placeholder='example@example.com' />
+                        <FromInput name='password' label='Password' placeholder='********' />
+                        <FromInput name='confirmPassword' label='Confirm Password' placeholder='********' />
                         <FormControlLabel
                         control={
                             <Checkbox name="checkedB" color="primary"/>

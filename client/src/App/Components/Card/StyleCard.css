@@ -103,6 +103,6 @@
 .small_text{
     color: gray;
     font-size: 12px;
-    margin-bottom: 2rem;
+    padding-bottom: 2rem;
     font-weight: 100;
 }

@@ -6,9 +6,10 @@
 .send_message_input{
     width: 60%;
     margin: 1rem 1rem;
+    margin-bottom: 0.5rem;
     background-color: #ffff;
     border: 2px solid gray;
-    height: 30px;
+    height: 50px;
     padding: 10px;
     border-radius: 30px;
 }

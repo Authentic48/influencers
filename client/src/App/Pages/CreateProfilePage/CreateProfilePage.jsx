@@ -3,10 +3,12 @@ import React from 'react'
 import { Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import { Button, Card } from '@material-ui/core'
-import FromField from '../../Components/FromField/FromField';
+
 
 import './StyleCreateProfile.css'
 import Navbar from '../../Layouts/Navbar/Navbar';
+import FromInput from '../../Components/FromField/FormInput';
+// import FromSelect from '../../Components/FromField/FromSelect';
 
 const validationSchema = Yup.object({
     name: Yup.string().required(),
@@ -14,12 +16,7 @@ const validationSchema = Yup.object({
     city: Yup.string().required(),
     description: Yup.string().required(),
     category: Yup.string().required(),
-    // followers: Yup.number(),
-    // friends: Yup.number(),
-    // subscribers : Yup.number(),
-    // facebookAccount: Yup.string(),
-    // youtubeAccount: Yup.string(),
-    // instagramAccount: Yup.string(),
+ 
   });
 
 export default function CreateProfilePage() {
@@ -56,23 +53,24 @@ export default function CreateProfilePage() {
                      
                   >
                         {({ dirty,isSubmitting, isValid, values })=>(  
-                           <Form>
+                           <Form  style={{width: '100%'}}> 
                               <h3 className='card_profile_title'>
                                     Insert Some Personal data (All Fields are required)
                               </h3>
-                              <FromField variant="outlined"  name='name' label='Name' />
-                              <FromField 
+                              <FromInput variant="outlined"  name='name' label='Name' />
+                              <FromInput 
                                  variant="outlined"  
                                  name='phone' 
                                  label='Phone Number' 
                                  placeholder='+2 (---) (---) (---)'/>
-                              <FromField 
+                              <FromInput 
                                  variant="outlined"  
                                  name='description' 
                                  label='Bio' 
                                  placeholder='Tell us About Your Self' />
-                              <FromField  variant="outlined" name='city' label='City' />
-                              <FromField  variant="outlined" name='category' label='Category' />
+                              <FromInput  variant="outlined" name='city' label='City' />
+
+                              <FromInput   variant="outlined"   name='category' label='Category' />
                               <br />
                               <div className='flex check_box'>
                                  <Field type='checkbox' name='facebook' />
@@ -81,17 +79,17 @@ export default function CreateProfilePage() {
                               
                               {values.facebook &&
                                  <>
-                                    <FromField 
+                                    <FromInput 
                                        variant="outlined"  
                                        name='facebookAccount' 
                                        label='Facebook Account' />
-                                    <FromField 
+                                    <FromInput 
                                        variant="outlined"  
                                        name='friends' 
                                        label='Friends' 
                                        placeholder='how Many friends do you have on facebook?' />
                                     
-                                    <FromField 
+                                    <FromInput 
                                        variant="outlined"  
                                        name='facebookPrice' 
                                        label='Price' 
@@ -104,16 +102,16 @@ export default function CreateProfilePage() {
                               </div>
                               {values.instagram &&
                                  <>
-                                    <FromField 
+                                    <FromInput 
                                        variant="outlined"  
                                        name='instagramAccount' 
                                        label='Instagram Account' />
-                                    <FromField 
+                                    <FromInput 
                                        variant="outlined"  
                                        name='followers' 
                                        label='Followers' 
                                        placeholder='how Many follower do you have on Instagram?' />
-                                    <FromField 
+                                    <FromInput 
                                        variant="outlined"  
                                        name='instagramPrice' 
                                        label='Price' 
@@ -126,16 +124,16 @@ export default function CreateProfilePage() {
                               </div>
                               {values.youtube &&
                                  <>
-                                    <FromField 
+                                    <FromInput 
                                        variant="outlined"  
                                        name='youtubeAccount' 
                                        label='Youtube Channel' />
-                                    <FromField 
+                                    <FromInput 
                                        variant="outlined"  
                                        name='subscribers' 
                                        label='Subscribers' 
                                        placeholder='how Many subscribers do you have on youtube?' />
-                                     <FromField 
+                                     <FromInput 
                                        variant="outlined"  
                                        name='yotubePrice' 
                                        label='Price' 

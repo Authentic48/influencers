@@ -18,6 +18,7 @@
     margin: 1rem;
     margin-left: 3rem;
     margin-right: 2rem;
+    text-align: center;
 }
 .cart_detail{ margin: 1rem 0rem;}
 
@@ -27,6 +28,8 @@
 }
 
 .cart_text_small{ margin-right: 2rem;}
+
+
 
 .cart_btn{
     margin-top: 2rem;

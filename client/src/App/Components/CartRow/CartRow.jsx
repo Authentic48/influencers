@@ -19,11 +19,12 @@ export default function CartRow({user}) {
                 <div className='cart_details'>
                     <div className='flex_between cart_detail cart_line'>
                         <p  className='cart_text_small'>Name</p>
-                        <p>{user.name}</p>
+                        <p className='text_cart_dynamic'>{user.name}</p>
                     </div>
                     <div className='flex_between cart_detail cart_line'>
                         <p className='cart_text_small'>email</p>
-                        <p>{user.email}</p>
+                        {/* <p>{user.email}</p> */}
+                        <p>mohamed Youssef</p>
                     </div>
                     <div className='flex_between cart_detail'>
                         <p className='cart_text_small'>Cost</p>

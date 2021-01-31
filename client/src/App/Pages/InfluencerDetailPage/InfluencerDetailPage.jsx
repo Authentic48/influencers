@@ -1,8 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
 import influencer from '../../API/influencer'
 import { useDispatch } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { addItemToCart } from '../../Redux/Cart/cartAction';
+
+import Lightbox from 'react-image-lightbox';
+import 'react-image-lightbox/style.css';
 
 import './style.css'
 
@@ -17,6 +20,7 @@ import Navbar from '../../Layouts/Navbar/Navbar';
 export default function InfluencerDetailPage({match}) {
 
     const user = influencer.find(i => i.id === match.params.id)
+    const [open, setOpen ] = useState(false)
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -31,7 +35,7 @@ export default function InfluencerDetailPage({match}) {
         <div className='InfluencerDetailPage'>
             <div className='about_intro'>
                 <div className='flexCol'>
-                    <img  src={user.image} alt={`get in business with ${user.name} `}/>
+                    <img onClick={()=> setOpen(true)}  src={user.image} alt={`get in business with ${user.name} `}/>
                     <h2 className='about_influencer_name'>{user.name}</h2>
                     <h3 className='influencer_price'>{user.price} EGP <span>for 3 stories</span></h3> 
                 </div>
@@ -79,7 +83,12 @@ export default function InfluencerDetailPage({match}) {
                     <ReportProblemIcon />
                 </button>
              </div>
-
+             {open && (
+                <Lightbox
+                    mainSrc={user.image}
+                    onCloseRequest={() => setOpen(false)}
+                />
+            )}
         </div>
        </>
     )

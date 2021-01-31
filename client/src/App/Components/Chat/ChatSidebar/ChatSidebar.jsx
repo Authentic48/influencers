@@ -24,11 +24,8 @@ export default function ChatSidebar() {
             <SidebarRow />
             <SidebarRow />
             <SidebarRow />
-
             <SidebarRow />
             <SidebarRow />
-            <SidebarRow />
-
         </div>
     )
 }

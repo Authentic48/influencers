@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form }  from 'formik'
 
 import * as Yup from 'yup'
-import FromField from '../../Components/FromField/FromField';
+import FormInput from '../../Components/FromField/FormInput';
 
 import { Button, Card } from '@material-ui/core';
 import Navbar from '../../Layouts/Navbar/Navbar';
@@ -33,14 +33,14 @@ export default function ReportUserPage({match}) {
                     >
                     {({ dirty,isSubmitting, isValid })=>(
                         <Form className='register_form'>
-                            <FromField variant="outlined"  name='influencerName' label='Influencer Name'  />
-                            <FromField 
+                            <FormInput variant="outlined"  name='influencerName' label='Influencer Name'  />
+                            <FormInput 
                                 variant="outlined"  
                                 name='email' 
                                 label='Your Email' 
                                 placeholder='example@example.com' />
-                            <FromField variant="outlined"   name='topic' label='Topic'/>
-                            <FromField 
+                            <FormInput variant="outlined"   name='topic' label='Topic'/>
+                            <FormInput 
                                 name='description' 
                                 variant="outlined"  
                                 multiline

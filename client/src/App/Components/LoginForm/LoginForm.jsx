@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form }  from 'formik'
 import { useHistory } from 'react-router-dom'
 import * as Yup from 'yup'
-import FromField from '../FromField/FromField';
+import FromInput from '../FromField/FormInput';
 
 import './StyleloginForm.css'
 import { Checkbox, FormControlLabel } from '@material-ui/core';
@@ -27,8 +27,8 @@ export default function LoginForm() {
             >
                  {({ dirty,isSubmitting, isValid })=>(
                      <Form>
-                         <FromField name='email' label='Email' placeholder='example@example.com' />
-                         <FromField name='password' label='Password' placeholder='********' />
+                         <FromInput name='email' label='Email' placeholder='example@example.com' />
+                         <FromInput name='password' label='Password' placeholder='********' />
                          <FormControlLabel
                             control={
                             <Checkbox name="checkedB" color="primary"/>

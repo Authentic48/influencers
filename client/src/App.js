@@ -1,6 +1,5 @@
-import { Route, Switch, useLocation } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Navbar from './App/Layouts/Navbar/Navbar';
 import CartPage from './App/Pages/CartPage/CartPage';
 import ChatPage from './App/Pages/ChatPage/ChatPage';
 import CreateProfilePage from './App/Pages/CreateProfilePage/CreateProfilePage';
@@ -10,6 +9,8 @@ import InfluencerPage from './App/Pages/InfluencerPage/InfluencerPage';
 import LoginPage from './App/Pages/LoginPage/LoginPage';
 import RegisterPage from './App/Pages/RegisterPage/RegisterPage'
 import ReportPage from './App/Pages/ReportUserPage/ReportUserPage';
+import SandBox from './App/Pages/SandBox/SandBox';
+
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
         <Route path='/cart' component={CartPage} />
         <Route path='/report-influencer/:keyword' component={ReportPage} />
         <Route path='/chat-users/:id' component={ChatPage} />
+        <Route path='/sand' component={SandBox} />
        </Switch>
     </div>
   );
