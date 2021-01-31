@@ -1,4 +1,4 @@
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, useLocation } from 'react-router-dom';
 import './App.css';
 import Navbar from './App/Layouts/Navbar/Navbar';
 import CartPage from './App/Pages/CartPage/CartPage';
@@ -12,6 +12,9 @@ import RegisterPage from './App/Pages/RegisterPage/RegisterPage'
 import ReportPage from './App/Pages/ReportUserPage/ReportUserPage';
 
 function App() {
+
+ 
+   
   return (
     <div className="App">
       {/* <Navbar /> */}

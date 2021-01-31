@@ -32,3 +32,6 @@
 .search .MuiSvgIcon-root{
     color: gray;
 }
+.sidebar .MuiSvgIcon-root{
+    color: white;
+}

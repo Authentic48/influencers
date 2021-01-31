@@ -2,9 +2,9 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import './StyleNavbar.css'
 
-export default function Navbar() {
+export default function Navbar({inverted}) {
     return (
-        <div className='nav flex_between'>
+        <div className={inverted ? 'nav_hidden' :'nav flex_between '}>
             <div className='logo'>LOGO</div>
             <div className='links flex'>
                 <Link to='/'  className='link home_link'>Home </Link >

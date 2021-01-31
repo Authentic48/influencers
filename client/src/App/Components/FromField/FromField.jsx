@@ -17,7 +17,7 @@ export default function FromField({ label, placeholder, ...props }) {
             // fullWidth
             helperText={meta.error && meta.touched && meta.error}
             style={{
-                marginBottom: '1rem',
+                marginBottom: '0.5rem',
                 padding: 10,
             }}
             />

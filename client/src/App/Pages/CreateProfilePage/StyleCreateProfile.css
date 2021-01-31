@@ -1,3 +1,10 @@
+.create_profile_app{
+    background-color: #eaeaea;
+    height: auto;
+    min-height: 100vh;
+    position: absolute;
+    width: 100%;
+}
 .create_profile{
     width: 80%;
     margin-left: 10%;

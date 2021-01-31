@@ -18,3 +18,6 @@
 .chat_header_info p{
     margin-top: 10px;
 }
+.chat_header  .MuiSvgIcon-root{
+    color: white;
+}

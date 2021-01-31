@@ -12,6 +12,7 @@ import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 
 import SmallCard from '../../Components/Card/SmallCard';
+import Navbar from '../../Layouts/Navbar/Navbar';
 
 export default function InfluencerDetailPage({match}) {
 
@@ -25,6 +26,8 @@ export default function InfluencerDetailPage({match}) {
     }
 
     return (
+        <>
+         <Navbar />
         <div className='InfluencerDetailPage'>
             <div className='about_intro'>
                 <div className='flexCol'>
@@ -78,6 +81,6 @@ export default function InfluencerDetailPage({match}) {
              </div>
 
         </div>
-       
+       </>
     )
 }
