@@ -1,0 +1,20 @@
+.chat_header{
+    border-bottom:  1px solid rgba(190, 190, 190, 0.1) ;
+}
+.chat_header_main{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 20px;
+}
+.chat_header_left{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.chat_header_info{
+    margin-left: 20px;
+}
+.chat_header_info p{
+    margin-top: 10px;
+}

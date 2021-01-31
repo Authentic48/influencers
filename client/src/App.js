@@ -2,6 +2,7 @@ import { Route, Switch } from 'react-router-dom';
 import './App.css';
 import Navbar from './App/Layouts/Navbar/Navbar';
 import CartPage from './App/Pages/CartPage/CartPage';
+import ChatPage from './App/Pages/ChatPage/ChatPage';
 import CreateProfilePage from './App/Pages/CreateProfilePage/CreateProfilePage';
 import HomePage from './App/Pages/HomePage/HomePage';
 import InfluencerDetailPage from './App/Pages/InfluencerDetailPage/InfluencerDetailPage';
@@ -13,7 +14,7 @@ import ReportPage from './App/Pages/ReportUserPage/ReportUserPage';
 function App() {
   return (
     <div className="App">
-      <Navbar />
+      {/* <Navbar /> */}
       <Switch>
         <Route path='/' exact component={HomePage} />
         <Route path='/login' exact component={LoginPage} />
@@ -23,6 +24,7 @@ function App() {
         <Route path='/create-profile' component={CreateProfilePage} />
         <Route path='/cart' component={CartPage} />
         <Route path='/report-influencer/:keyword' component={ReportPage} />
+        <Route path='/chat-users/:id' component={ChatPage} />
        </Switch>
     </div>
   );

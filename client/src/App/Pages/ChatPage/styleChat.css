@@ -1,0 +1,8 @@
+.chat_page{
+    display: flex;
+    background-color: #2d4671;
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    overflow: hidden;
+}
