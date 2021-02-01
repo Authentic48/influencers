@@ -43,10 +43,10 @@ export default function SandBox() {
         <Select
           labelId="demo-mutiple-name-label"
           id="demo-mutiple-name"
-          input={<Input />}
           multiple
           value={personName}
           onChange={handleChange}
+          input={<Input />}
           
         >
           {names.map((name) => (
