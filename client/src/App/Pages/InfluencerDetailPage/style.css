@@ -109,3 +109,54 @@
 .buttons_group{
     margin-bottom: 1000px;
 }
+
+
+
+@media(max-width:860px){
+    .socials_media{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .buttons_group{
+        flex-direction: column;
+    }
+    .send_message , .favorite_btn, .report_btn{
+        width: 70%;
+        text-align: center;
+        justify-content: center;
+    }
+    .category_data_weird{
+        justify-content: center;
+        flex-direction: column;
+    }
+    .influncuer_category{
+        margin-top: 3rem !important;
+        margin-bottom: 0rem;
+        font-size: 28px;
+    }
+    .weird_container{
+        justify-content: center;
+        margin-top: 0px;
+    }
+    
+}
+
+@media(max-width: 500px){
+    .send_message , .favorite_btn, .report_btn{
+        width: 90%;
+        margin: 1rem;
+    }
+    .about_intro img{
+        height: 150px;
+        width: 150px;
+        object-fit: cover;
+        border-radius: 75px;
+        margin-top: -60px;
+    }
+    .description{
+        width: 95%;
+        margin-left: 2.5%;
+    }
+    .about_intro h1{ font-size: 27px !important;}
+}

@@ -10,3 +10,8 @@
     height: 100vh;
     background-color: #d5eafd;
 }
+
+@media(max-width:1000px){
+    .register_right{ display: none;}
+    .register_left{flex: 1;}
+}

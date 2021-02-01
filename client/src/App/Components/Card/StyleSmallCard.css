@@ -31,3 +31,15 @@
 .social_media > h3:hover{
     color: #afcce7;
 }
+
+@media(max-width: 850px){
+    .social_media{
+        width: 80%;
+    }
+}
+
+@media(max-width:450px){
+    .social_media{
+        width: 95%;
+    }
+}

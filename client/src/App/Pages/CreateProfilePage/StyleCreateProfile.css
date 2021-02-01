@@ -25,9 +25,20 @@
 }
 
 .check_box{
-    margin-top: 1rem;
+    margin: 1rem 0rem;
 }
 .card_btn{
     display: flex;
     justify-content: flex-end;
+}
+
+
+@media(max-width: 800px){
+    .create_profile{
+        width: 90%;
+        margin-left: 5%;
+    }
+    .create_profile_card{
+        padding: 25px;
+    }
 }

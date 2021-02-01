@@ -32,7 +32,7 @@ export default function ReportUserPage({match}) {
                         onSubmit={(values) => console.log(values)}
                     >
                     {({ dirty,isSubmitting, isValid })=>(
-                        <Form className='register_form'>
+                        <Form >
                             <FormInput variant="outlined"  name='influencerName' label='Influencer Name'  />
                             <FormInput 
                                 variant="outlined"  

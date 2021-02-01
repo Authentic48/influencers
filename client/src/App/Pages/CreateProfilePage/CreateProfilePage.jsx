@@ -4,9 +4,7 @@ import { Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 import { Button, Card } from '@material-ui/core'
 
-import { CategoriesOptions } from '../../API/CategoriesOptions'
-import { citiesData } from '../../API/CitiesData'
-import { initialValues } from '../../API/initialValues'
+import { initialValues, citiesData, CategoriesOptions } from '../../API/options'
 
 import './StyleCreateProfile.css'
 import Navbar from '../../Layouts/Navbar/Navbar';

@@ -4,11 +4,11 @@ import Navbar from '../../Layouts/Navbar/Navbar'
 
 import './StyleRegister.css'
 
-export default function LoginPage() {
+export default function RegisterPage() {
     return (
         <>
         <Navbar />
-        <div className='flex '>
+        <div className='flex  register_page'>
             <div className='register_left flexCol'>
                <RegisterForm />
             </div>

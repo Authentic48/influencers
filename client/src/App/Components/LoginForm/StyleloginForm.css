@@ -8,3 +8,25 @@
     justify-content: center;
 }
 .login_form > h2{ color: #2168A6;}
+
+
+@media(max-width: 1100px){
+    .login_form{
+        width: 100%;
+        margin-left: 10%;
+    }
+}
+
+@media(max-width: 1000px){
+    .login_form{
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+@media(max-width: 650px){
+    .login_form{
+        width: 80%;
+        margin-left: 0;
+    }
+}

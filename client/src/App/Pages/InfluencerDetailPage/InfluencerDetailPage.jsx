@@ -50,7 +50,7 @@ export default function InfluencerDetailPage({match}) {
                 </div>
                 <div className='flex'>
                 </div>
-                <div className='flex'>
+                <div className='flex category_data_weird'>
                     <div className='influncuer_category' >Category:</div>
                         <div className='weird_container'>
                             {
