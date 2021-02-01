@@ -1,9 +1,10 @@
 import React from 'react'
 import LottieView from '../../Common/LottieView/LottieView'
 import { Container } from '@material-ui/core';
+import Typical from 'react-typical'
 import ArrowRightAltIcon from '@material-ui/icons/ArrowRightAlt';
 
-import animation from '../../Common/Animation/animation3.json'
+import animation from '../../Common/Animation/animation5.json'
 
 import './StyleHero.css'
 
@@ -13,9 +14,13 @@ export default function Hero() {
             <Container>
                 <div className='flex_center'>
                     <div className='hero_left'>
-                        <h1 className='main_title'>
-                            Success is nothing more  than a few simple decisions practiced every day
-                        </h1>
+                        <div className='main_title'>
+                            <Typical
+                                steps={['Success is nothing more than a', 1000, 'Success is nothing more  than a few simple decisions practiced every day!', 500]}
+                                loop={Infinity}
+                                wrapper="h1"
+                            />
+                        </div>
                         <h3>
                             Let's get in Business with influencer easily
                         </h3>
@@ -24,8 +29,8 @@ export default function Hero() {
                             <ArrowRightAltIcon />
                         </button>
                     </div>
-                    <div className='hero_right'>
-                        <LottieView animation={animation} />
+                    <div className='hero_right' >
+                        <LottieView height={700} width={700} animation={animation} />
                     </div>
                 </div>
             </Container>

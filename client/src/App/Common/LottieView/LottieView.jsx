@@ -11,15 +11,17 @@ export default function LottieView({animation,inverted, width, height, ...props}
     return (
         <> {inverted ?
             <Lottie options={defaultOptions}
-                height={700}
-                width={700}
+                height={height}
+                width={width}
+                {...props}
                 style={{
                     transform: 'scaleX(-1)' 
                 }} 
                 />:
                 <Lottie options={defaultOptions}
-                height={700}
-                width={700}
+                height={height}
+                width={width}
+                {...props}
                 />
             }
         </>
