@@ -38,7 +38,7 @@ export default function CreateProfilePage() {
                               <h3 className='card_profile_title'>
                                     Insert Some Personal data (All Fields are required)
                               </h3>
-                              <FromInput   name='name' label='Name' />
+                              <FromInput  name='name' label='Name' />
                               <FromInput name='phone'  label='Phone Number' />
                               <FromInput name='description' label='Bio'placeholder='Tell us About Your Self' />
                               <FromSelect options={citiesData}   name='city' label='City' />

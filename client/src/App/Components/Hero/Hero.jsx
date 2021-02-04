@@ -16,7 +16,7 @@ export default function Hero() {
                     <div className='hero_left'>
                         <div className='main_title'>
                             <Typical
-                                steps={['Success is nothing more than a', 1000, 'Success is nothing more  than a few simple decisions practiced every day!', 500]}
+                                steps={['Success is nothing more than a', 1000, 'Success is nothing more  than a few simple decisions practiced every day!', 800]}
                                 loop={Infinity}
                                 wrapper="h1"
                             />
