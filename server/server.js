@@ -3,6 +3,7 @@ import connectDB from './Config/db.js'
 import dotenv from 'dotenv'
 import userRouter from './Routes/userRoute.js'
 import { notFound, errorHandler } from './middleware/errorHandler.js'
+import morgan from 'morgan'
 
 
 connectDB()
