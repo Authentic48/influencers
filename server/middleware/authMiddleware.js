@@ -41,4 +41,13 @@ export const admin = (req, res, next) => {
   }
 }
 
+export const influencer = (req, res, next) => {
+  if (req.user && req.user.isInfluencer) {
+    next()
+  } else {
+    res.status(401)
+    throw new Error('Not authorized as an influencer')
+  }
+}
+
 

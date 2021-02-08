@@ -2,6 +2,8 @@ import express from 'express';
 import connectDB from './Config/db.js'
 import dotenv from 'dotenv'
 import userRouter from './Routes/userRoute.js'
+import profile from './Routes/influencerRoute.js'
+
 import { notFound, errorHandler } from './middleware/errorHandler.js'
 import morgan from 'morgan'
 
@@ -15,6 +17,7 @@ const app = express()
 app.use(express.json())
 
 app.use('/api/users', userRouter)
+app.use('/api/influencers', profile)
 
 const PORT = process.env.PORT|| 5000;
 
