@@ -59,3 +59,31 @@ export const registerUser = asyncHandler (async (req, res) =>{
       throw new Error('Incorrect Data')
    }
 })
+
+// @desc   register new user 
+//@route   GET /api/users
+//@Access  Public
+export const getUserProfile = asyncHandler (async (req, res) =>{
+   
+   const user = await User.findById(req.user._id)
+
+   console.log(user)
+
+   if(user)
+   {
+      res.json({
+         id : user._id,
+         email: user.email,
+         name: user.name,
+         isAdmin: user.isAdmin,
+         isInfluencer: user.isInfluencer,
+      })
+
+   }else{
+      res.status(404)
+      throw new Error('Use not found')
+   }
+
+})
+
+
