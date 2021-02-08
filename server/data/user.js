@@ -14,6 +14,12 @@ const users =[
         isInfluencer:true
     },
     {
+        name: 'Ibrahim',
+        email: 'ibrahim@gmail.com',
+        password: bcrypt.hashSync('54321'),
+        isInfluencer:true
+    },
+    {
         name: 'John Doe',
         email: 'guest@gmail.com',
         password: bcrypt.hashSync('112233'),

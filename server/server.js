@@ -19,7 +19,7 @@ app.use(express.json())
 app.use('/api/users', userRouter)
 app.use('/api/influencers', profile)
 
-const PORT = process.env.PORT|| 5000;
+const PORT = process.env.PORT || 5000;
 
 app.use(notFound)
 app.use(errorHandler)
