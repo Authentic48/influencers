@@ -9,7 +9,7 @@ const users =[
     },
     {
         name: 'Ahmed Mostafa',
-        email: 'influencerd@gmail.com',
+        email: 'influencer@gmail.com',
         password: bcrypt.hashSync('54321'),
         isInfluencer:true
     },
