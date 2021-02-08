@@ -19,21 +19,24 @@ export const getProfile = asyncHandler(async (req, res) => {
 // @access  Private/Influencers
 export const createProfile = asyncHandler(async (req, res) => {
     
+    const {name, image, bio, city, price, category, fbAccount, fbFriends, instAccount, instFollowers, youtubeAccount, youtubeSubscribers} = req.body;
     const influencer = new Influencer({
         user: req.user._id,
-        name: req.user.name,
-        image: req.influencer.image,
-        bio: req.influencer.bio,
-        price: req.influencer.price,
-        category: req.influencer.category,
-        fbAccount: req.influencer.fbAccount,
-        fbFriends: req.influencer.fbFriends,
-        instAccount: req.influencer.instAccount,
-        instAccount: req.influencer.instAccount,
-        instFollowers: req.influencer.instFollowers,
-        youtubeAccount: req.influencer.youtubeAccount,
-        youtubeSubscribers: req.influencer.youtubeSubscribers,
-    })
+        city,
+        name,
+        image,
+        bio,
+        price,
+        category,
+        fbAccount,
+        fbFriends,
+        instAccount,
+        instAccount,
+        instFollowers,
+        youtubeAccount,
+        youtubeSubscribers,
+        
+    })    
     const createdInfluencer = await influencer.save();
   
     res.status(201).json(createdInfluencer)
