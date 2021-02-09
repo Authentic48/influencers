@@ -88,4 +88,21 @@ export const getProfileById = asyncHandler(async (req, res) => {
     }
 })
 
+// @desc    Influencer
+// @route   GET /api/influencers/:id
+// @access  Public/Influencers
+export const deleteProfile = asyncHandler(async (req, res) => {
+    
+    const influencer = await Influencer.findById(req.params.id)
+    if(influencer){
+        await influencer.remove()
+        res.json({message : "profile has Been deleted"})
+    }else{
+        res.status(404)
+        res.json({message : "profile Not Found"})
+    }
+   
+    res.json(influencers)
+})
+
 

@@ -128,12 +128,11 @@ export const deleteUser = asyncHandler(async (req, res) => {
    if(user){
       await user.remove()
       res.json({message : "user has Been deleted"})
+
    }else{
       res.status(404)
       res.json({message : "User Not Found"})
    }
- 
-   res.json(users)
 })
 
 // @desc    Get User By id
@@ -148,7 +147,7 @@ export const getUserById = asyncHandler(async (req, res) => {
       res.status(404)
       res.json({message : "User Not Found"})
    }
- })
+})
 
 
 
