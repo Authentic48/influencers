@@ -70,7 +70,7 @@ const influencerSchema = mongoose.Schema({
         default: false
     },
     phoneNumber:{
-        type: Number,
+        type: String,
         required : true,
     },
     youtubeSubscribers:{

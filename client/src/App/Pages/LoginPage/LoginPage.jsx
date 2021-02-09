@@ -1,10 +1,18 @@
-import React from 'react'
+import React,{ useEffect } from 'react'
+import { useSelector } from 'react-redux'
 import LoginForm from '../../Components/LoginForm/LoginForm'
 import Navbar from '../../Layouts/Navbar/Navbar'
 
 import './StyleLogin.css'
 
-export default function LoginPage() {
+export default function LoginPage({history}) {
+    const { isAuthenticated } = useSelector(state => state.auth)
+
+    useEffect(()=>{
+        if (isAuthenticated){
+            history.push('/influencer')
+        }
+    },[isAuthenticated, history])
     return (
         <>
         <Navbar />

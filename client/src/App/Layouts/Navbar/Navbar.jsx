@@ -6,9 +6,15 @@ import CloseIcon from '@material-ui/icons/Close';
 
 import MenuIcon from '@material-ui/icons/Menu';
 import './StyleNavbar.css'
+import { useDispatch, useSelector } from 'react-redux';
+import { userLogout } from '../../Redux/Auth/AuthActions';
 
 export default function Navbar({inverted}) {
     const [open, setOpen] = useState(false)
+    const { isAuthenticated } = useSelector(state => state.auth)
+    const dispatch = useDispatch()
+
+    
     return (
         <>
         <div className={inverted ? 'nav_hidden' :'nav flex_between '}>
@@ -18,7 +24,9 @@ export default function Navbar({inverted}) {
                     <Link to='/'  className='link home_link'>Home </Link >
                     <Link to='/influencer' className='link'>Influencer</Link >
                     <Link to='/cart' className='link'>Favorites</Link >
-                    <Link to='/login' className='link home_link' >Login</Link >
+                   {!isAuthenticated? <Link to='/login' className='link home_link' >Login</Link >:
+                    <div onClick={()=> dispatch(userLogout())} className='link'> Logout</div>
+                    }
                 </Hidden> 
                 <Hidden mdUp>
                     {!open ?  (<IconButton onClick={()=>setOpen(true)}> <MenuIcon fontSize='large' /></IconButton>)

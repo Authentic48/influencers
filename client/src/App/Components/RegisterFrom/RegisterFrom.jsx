@@ -7,6 +7,8 @@ import FromInput from '../FromField/FormInput';
 import { Checkbox, FormControlLabel } from '@material-ui/core';
 
 import './StyleRegisterForm.css'
+import { useDispatch, useSelector } from 'react-redux';
+import {userRegister} from '../../Redux/Auth/AuthActions';
 
 
 const validationSchema = Yup.object({
@@ -20,6 +22,8 @@ const validationSchema = Yup.object({
 export default function RegisterForm() {
 
     const history = useHistory()
+    const dispatch = useDispatch()
+    const { registerError : error } = useSelector(state => state.auth)
 
     return (
         <div className='flexCol '>
@@ -27,7 +31,9 @@ export default function RegisterForm() {
             <Formik
                 validationSchema={validationSchema}
                 initialValues={{ email: '', password:'', name:'', confirmPassword: ''}}
-                onSubmit={(values) => console.log(values)}
+                onSubmit={(values) => {
+                    dispatch(userRegister(values.name, values.email, values.password))
+                }}
             >
                  {({ dirty,isSubmitting, isValid })=>(
                      <Form className='register_form'>
@@ -41,8 +47,11 @@ export default function RegisterForm() {
                         }
                         label="remember me"
                         />
+                        {error && <div style={{marginTop: 20}}> 
+                             <label className='label'>{error}</label>
+                        </div>}
                          <div className='btn_group'>
-                             <button className='btn_secondary btn_plus_padding_2'>
+                             <button type='submit' className='btn_secondary btn_plus_padding_2'>
                                  Register
                              </button>
                              <p className='auth_text'> 

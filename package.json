@@ -6,6 +6,7 @@
   "type": "module",
   "dependencies": {
     "bcryptjs": "^2.4.3",
+    "client": "file:client",
     "colors": "^1.4.0",
     "concurrently": "^5.3.0",
     "dotenv": "^8.2.0",
