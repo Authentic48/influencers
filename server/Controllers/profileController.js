@@ -6,7 +6,7 @@ import { influencer } from '../middleware/authMiddleware.js'
 
 // @desc    Influencer
 // @route   PUT /api/influencers
-// @access  Public/Influencers
+// @access  Public
 export const getProfile = asyncHandler(async (req, res) => {
     
     const influencers = await Influencer.find({})
@@ -16,7 +16,7 @@ export const getProfile = asyncHandler(async (req, res) => {
 
 // @desc    Influencer
 // @route   PUT /api/influencers
-// @access  Private/Influencers
+// @access  Private/Influencer
 export const updatedProfile = asyncHandler(async (req, res) => {
 
     const profile = await Influencer.findById(req.params.id)
@@ -47,7 +47,7 @@ export const updatedProfile = asyncHandler(async (req, res) => {
 
 // @desc    Influencer
 // @route   PUT /api/influencers
-// @access  Private/Influencers
+// @access  Private/Influencer
 export const createProfile = asyncHandler(async (req, res) => {
     
     const {name, image, bio, city, price, category, fbAccount, fbFriends, instAccount, instFollowers, youtubeAccount, youtubeSubscribers} = req.body;
@@ -75,7 +75,7 @@ export const createProfile = asyncHandler(async (req, res) => {
 
 // @desc    Influencer
 // @route   GET /api/influencers/:id
-// @access  Public/Influencers
+// @access  Public/
 export const getProfileById = asyncHandler(async (req, res) => {
     
     const influencer = await Influencer.findById(req.params.id)
@@ -90,7 +90,7 @@ export const getProfileById = asyncHandler(async (req, res) => {
 
 // @desc    Influencer
 // @route   GET /api/influencers/:id
-// @access  Public/Influencers
+// @access  Public/Admin
 export const deleteProfile = asyncHandler(async (req, res) => {
     
     const influencer = await Influencer.findById(req.params.id)
@@ -102,7 +102,40 @@ export const deleteProfile = asyncHandler(async (req, res) => {
         res.json({message : "profile Not Found"})
     }
    
-    res.json(influencers)
 })
 
+// @desc    Influencer
+// @route   GET /api/influencers/:id
+// @access  Private
+export const revewProfile = asyncHandler(async (req, res) => {
+    const {rating, comment} = req.body;
 
+    const influencer = await Influencer.findById(req.params.id)
+
+    if(influencer)
+    {
+        const alreadyreviewed = influencer.reviews.find(r => r.user.toString() === req.user._id.toString())
+        if(alreadyreviewed)
+        {
+            res.status(400)
+            throw new Error('Influencer already reviewed')
+        }
+        const review = {
+            name: req.user.name,
+            rating: Number(rating),
+            comment,
+            user: req.user._id
+        }
+        influencer.reviews.push(review)
+        influencer.numReviews = influencer.reviews.length
+        influencer.rating = influencer.reviews.reduce((acc, item) => item.rating + acc, 0) / influencer.reviews.length
+
+        await influencer.save()
+        res.status(201).json({ message: "Review added" })
+    }else
+    {
+        res.status(404)
+        res.json({message : "Influencer Not Found"})
+    }
+   
+})

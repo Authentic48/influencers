@@ -75,6 +75,11 @@ const influencerSchema = mongoose.Schema({
         required: true,
         default: 0
     },
+    rating:{
+        type: Number,
+        required: true,
+        default: 0
+    },
     reviews: [reviewSchema],
 }, {
     timestamps: true
