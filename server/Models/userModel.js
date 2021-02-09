@@ -21,11 +21,6 @@ const userSchema = mongoose.Schema({
         required : true,
         default: false
     },
-    image:{
-        type: String,
-        required : true,
-        default: false
-    },
     isInfluencer:{
         type: Boolean,
         required : true,

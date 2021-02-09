@@ -35,7 +35,8 @@ export const updatedProfile = asyncHandler(async (req, res) => {
         profile.instAccount = req.body.instAccount || profile.instAccount 
         profile.instFollowers = req.body.instFollowers || profile.instFollowers 
         profile.youtubeAccount = req.body.youtubeAccount || profile.youtubeAccount 
-        profile.youtubeSubscribers = req.body.youtubeSubscribers || profile.youtubeSubscribers 
+        profile.youtubeSubscribers = req.body.youtubeSubscribers || profile.youtubeSubscribers
+        profile.isYoutuber = req.body.isYoutuber || profile.isYoutuber 
 
         const updatedInfluencer = await profile.save();
   
@@ -50,7 +51,14 @@ export const updatedProfile = asyncHandler(async (req, res) => {
 // @access  Private/Influencer
 export const createProfile = asyncHandler(async (req, res) => {
     
-    const {name, image, bio, city, price, category, fbAccount, fbFriends, instAccount, instFollowers, youtubeAccount, youtubeSubscribers} = req.body;
+    const {name, image, bio, city, price, category, fbAccount, fbFriends, instAccount, instFollowers, youtubeAccount, youtubeSubscribers,isYoutuber} = req.body;
+    // const alreadycreated = await Influencer.find(r => r.user.toString() === req.user._id.toString())
+    // if(alreadycreated)
+    // {
+    //     res.status(400)
+    //     throw new Error('Influencer already created')
+    // }
+      
     const influencer = new Influencer({
         user: req.user._id,
         city,
@@ -66,11 +74,14 @@ export const createProfile = asyncHandler(async (req, res) => {
         instFollowers,
         youtubeAccount,
         youtubeSubscribers,
-        
-    })    
+        isYoutuber
+            
+    })  
+    
     const createdInfluencer = await influencer.save();
-  
     res.status(201).json(createdInfluencer)
+
+   
 })
 
 // @desc    Influencer
