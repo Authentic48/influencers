@@ -64,9 +64,6 @@ export const registerUser = asyncHandler (async (req, res) =>{
 export const getUserProfile = asyncHandler (async (req, res) =>{
    
    const user = await User.findById(req.user._id)
-
-   console.log(user)
-
    if(user)
    {
       res.json({
@@ -79,7 +76,7 @@ export const getUserProfile = asyncHandler (async (req, res) =>{
 
    }else{
       res.status(404)
-      throw new Error('Use not found')
+      throw new Error('User not found')
    }
 
 })

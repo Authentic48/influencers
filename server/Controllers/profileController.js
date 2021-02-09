@@ -17,6 +17,37 @@ export const getProfile = asyncHandler(async (req, res) => {
 // @desc    Influencer
 // @route   PUT /api/influencers
 // @access  Private/Influencers
+export const updatedProfile = asyncHandler(async (req, res) => {
+
+    const profile = await Influencer.findById(req.params.id)
+
+    if(profile)
+    {
+        profile.name = req.body.name || profile.name 
+        profile.city = req.body.city || profile.city 
+        profile.name = req.body.name || profile.name 
+        profile.image = req.body.image || profile.image 
+        profile.bio = req.body.bio || profile.bio 
+        profile.price = req.body.price || profile.price 
+        profile.category = req.body.category || profile.category 
+        profile.fbAccount = req.body.fbAccount || profile.fbAccount 
+        profile.fbFriends = req.body.fbFriends || profile.fbFriends 
+        profile.instAccount = req.body.instAccount || profile.instAccount 
+        profile.instFollowers = req.body.instFollowers || profile.instFollowers 
+        profile.youtubeAccount = req.body.youtubeAccount || profile.youtubeAccount 
+        profile.youtubeSubscribers = req.body.youtubeSubscribers || profile.youtubeSubscribers 
+
+        const updatedInfluencer = await profile.save();
+  
+        res.status(201).json(updatedInfluencer)
+    }
+        
+   
+})
+
+// @desc    Influencer
+// @route   PUT /api/influencers
+// @access  Private/Influencers
 export const createProfile = asyncHandler(async (req, res) => {
     
     const {name, image, bio, city, price, category, fbAccount, fbFriends, instAccount, instFollowers, youtubeAccount, youtubeSubscribers} = req.body;
@@ -41,3 +72,20 @@ export const createProfile = asyncHandler(async (req, res) => {
   
     res.status(201).json(createdInfluencer)
 })
+
+// @desc    Influencer
+// @route   GET /api/influencers/:id
+// @access  Public/Influencers
+export const getProfileById = asyncHandler(async (req, res) => {
+    
+    const influencer = await Influencer.findById(req.params.id)
+    if(influencer)
+    {
+      res.json(influencer)
+    }else{
+        res.status(404)
+        throw new Error('Profile not found')
+    }
+})
+
+
