@@ -10,15 +10,24 @@ import './StyleCreateProfile.css'
 import Navbar from '../../Layouts/Navbar/Navbar';
 import FromInput from '../../Components/FromField/FormInput';
 import FromSelect from '../../Components/FromField/FromSelect'
+import { useDispatch } from 'react-redux'
+import { createProfile } from '../../Redux/Influencer/profile/createProfileActions'
 
 const validationSchema = Yup.object({
     name: Yup.string().required(),
-    phone: Yup.string().required(),
+    phoneNumber: Yup.string().required(),
     city: Yup.string().required(),
-    description: Yup.string().required(),
+    bio: Yup.string().required(),
+    price: Yup.number().required(),
+    fbAccount: Yup.string().required(),
+    fbFriends :Yup.number().required(),
+    instAccount : Yup.string().required(),
+    instFollowers : Yup.number().required(),
   });
 
 export default function CreateProfilePage() {
+
+   const dispatch = useDispatch()
 
     return (
        <>
@@ -28,7 +37,9 @@ export default function CreateProfilePage() {
                <h1>Create influenceur profile</h1>
                <Card className='flexCol create_profile_card'>
                   <Formik
-                     onSubmit={(values) => console.log(values)}
+                     onSubmit={(values) => {
+                        dispatch(createProfile(values))
+                     }}
                      validationSchema={validationSchema}
                      initialValues={initialValues}
                      
@@ -39,62 +50,28 @@ export default function CreateProfilePage() {
                                     Insert Some Personal data (All Fields are required)
                               </h3>
                               <FromInput  name='name' label='Name' />
-                              <FromInput name='phone'  label='Phone Number' />
-                              <FromInput name='description' label='Bio'placeholder='Tell us About Your Self' />
+                              <FromInput name='phoneNumber'  label='Phone Number' />
+                              <FromInput name='bio' label='Bio'placeholder='Tell us About Your Self' />
                               <FromSelect options={citiesData}   name='city' label='City' />
                               <FromSelect multiple name='category' label='category' options={CategoriesOptions} />
+                              <FromInput name='price'  label='Price' />
+                              <FromInput  name='fbAccount' label='Facebook Account' />
+                              <FromInput  name='fbFriends' label='Number of friends' />
+                              <FromInput  name='instAccount' label='Instagram Account' />
+                              <FromInput  name='instFollowers' label='Number of followers' />
 
                               <div className='flex check_box'>
-                                 <Field type='checkbox' name='facebook' />
-                                 <p style={{marginLeft: 10}}>Facebook Influenceur?</p>
+                                 <Field type='checkbox' name='isYoutuber' />
+                                 <p style={{marginLeft: 10}}>Are you youtuber?</p>
                               </div>
-                              {values.facebook &&
-                                 <>
-                                    <FromInput name='facebookAccount' label='Facebook Account' />
-                                    <FromInput 
-                                       name='friends' 
-                                       label='Friends' 
-                                       placeholder='how Many friends do you have on facebook?' />
-                                    <FromInput  
-                                       name='facebookPrice' 
-                                       label='Price' 
-                                       placeholder='What is your Standard Price on Facebook?' />
-                                 </>
-                              }
-
-                              <div className='flex check_box'>
-                                 <Field type='checkbox' name='instagram' />
-                                 <p style={{marginLeft: 10}}>Instagram Influenceur?</p>
-                              </div>
-                              {values.instagram &&
-                                 <>
-                                    <FromInput name='instagramAccount'  label='Instagram Account' />
-                                    <FromInput 
-                                       name='followers' 
-                                       label='Followers' 
-                                       placeholder='how Many follower do you have on Instagram?' />
-                                    <FromInput 
-                                       name='instagramPrice' 
-                                       label='Price' 
-                                       placeholder='What is your Standard Price on Instagram?' />
-                                 </>
-                              }
-
-                              <div className='flex check_box'>
-                                 <Field type='checkbox' name='youtube' />
-                                 <p style={{marginLeft: 10}}>Youtuber?</p>
-                              </div>
-                              {values.youtube &&
+                              {values.isYoutuber &&
                                  <>
                                     <FromInput name='youtubeAccount' label='Youtube Channel' />
                                     <FromInput
-                                        name='subscribers' 
+                                        name='youtubeSubscribers' 
                                        label='Subscribers' 
                                        placeholder='how Many subscribers do you have on youtube?' />
-                                     <FromInput  
-                                       name='yotubePrice' 
-                                       label='Price' 
-                                       placeholder='What is your Standard Price on Youtube?' />
+                                     
                                  </>
                               }
                               <div className='card_btn' >

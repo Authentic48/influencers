@@ -43,7 +43,7 @@ export default function LoginForm() {
                              <label className='label'>{error}</label>
                         </div>}
                          <div className='btn_group'>
-                             <button className='btn_secondary btn_plus_padding_2'>
+                             <button type='submit' className='btn_secondary btn_plus_padding_2'>
                                  Login
                              </button>
                              <p className='auth_text'> 
