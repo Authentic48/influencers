@@ -23,7 +23,7 @@ export default function Card({user}) {
             </h3>
          </div>
          <div className='flexCol'>
-             <button onClick={() => history.push(`/user-profile/${user.id}`)} className='btn_secondary2 flex'>
+             <button onClick={() => history.push(`/user-profile/${user._id}`)} className='btn_secondary2 flex'>
                  View Profile
              </button>
              <div className='line' />

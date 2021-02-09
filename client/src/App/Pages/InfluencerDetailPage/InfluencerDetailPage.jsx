@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
-import influencer from '../../API/influencer'
-import { useDispatch } from 'react-redux'
+import React, { useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { addItemToCart } from '../../Redux/Cart/cartAction';
 
@@ -16,19 +15,30 @@ import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 
 import SmallCard from '../../Components/Card/SmallCard';
 import Navbar from '../../Layouts/Navbar/Navbar';
+import { getInfluencerById } from '../../Redux/Influencer/profile/profileAction';
+import Loading from '../../Common/Loading/Loading';
 
 export default function InfluencerDetailPage({match}) {
 
-    const user = influencer.find(i => i.id === match.params.id)
+
+    const { 
+        influencerById: user, 
+        singleInfluencerLoading: loading } = useSelector(state=> state.influencerProfile)
+        
     const [open, setOpen ] = useState(false)
     const dispatch = useDispatch()
     const history = useHistory()
+
+    useEffect(()=>{
+        dispatch(getInfluencerById(match.params.id))
+    },[dispatch, match])
 
     const handleAddToFavorite = () =>{
         dispatch(addItemToCart(user))
         history.push('/cart')
     }
-
+    
+    if(loading || !user) return <Loading />
     return (
         <>
          <Navbar />
@@ -40,13 +50,13 @@ export default function InfluencerDetailPage({match}) {
                     <h3 className='influencer_price'>{user.price} EGP <span>for 3 stories</span></h3> 
                 </div>
                 <div className='flex_between socials_media'>
-                    <SmallCard people='Follower' type='Instagram' email='@mohamed_emam' value={1010000}/>
+                    <SmallCard people='Follower' type='Instagram' email='@mohamed_emam' value={user.instFollowers}/>
                     <SmallCard people='Friend' type='Facebook' email='@mohamed_emam' value={13400000}/>
                     <SmallCard people='Subscriber' type='Youtube' email='@mohamed_emam' value={500000} />
                 </div>
                 <div className='flexCol'>
                     <h2 className='influnucer_des'>Description</h2>
-                    <p className='description'>{user.description}</p>
+                    <p className='description'>{user.bio}</p>
                 </div>
                 <div className='flex'>
                 </div>
@@ -55,7 +65,7 @@ export default function InfluencerDetailPage({match}) {
                         <div className='weird_container'>
                             {
                                 user.category.map(category=>(
-                                    <div category={category} className='weird'>
+                                    <div key={category} category={category} className='weird'>
                                         {category}
                                     </div>
 
@@ -64,7 +74,7 @@ export default function InfluencerDetailPage({match}) {
                         </div>
                 </div>
                 <div className='flex_center' style={{marginTop: '2rem', paddingBottom:'2rem'}}>
-                    <h1>{user.location}</h1>
+                    <h1>{user.city}</h1>
                     <LocationOnIcon />
                 </div>
              </div>
