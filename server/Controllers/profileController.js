@@ -37,6 +37,8 @@ export const updatedProfile = asyncHandler(async (req, res) => {
         profile.youtubeAccount = req.body.youtubeAccount || profile.youtubeAccount 
         profile.youtubeSubscribers = req.body.youtubeSubscribers || profile.youtubeSubscribers
         profile.isYoutuber = req.body.isYoutuber || profile.isYoutuber 
+        profile.phoneNumber = req.body.phoneNumber || profile.phoneNumber 
+
 
         const updatedInfluencer = await profile.save();
   
@@ -51,7 +53,7 @@ export const updatedProfile = asyncHandler(async (req, res) => {
 // @access  Private/Influencer
 export const createProfile = asyncHandler(async (req, res) => {
     
-    const {name, image, bio, city, price, category, fbAccount, fbFriends, instAccount, instFollowers, youtubeAccount, youtubeSubscribers,isYoutuber} = req.body;
+    const {name, image, bio, city, price, category, fbAccount, fbFriends, instAccount, instFollowers, youtubeAccount, youtubeSubscribers,isYoutuber, phoneNumber} = req.body;
     // const alreadycreated = await Influencer.find(r => r.user.toString() === req.user._id.toString())
     // if(alreadycreated)
     // {
@@ -74,7 +76,8 @@ export const createProfile = asyncHandler(async (req, res) => {
         instFollowers,
         youtubeAccount,
         youtubeSubscribers,
-        isYoutuber
+        isYoutuber,
+        phoneNumber
             
     })  
     

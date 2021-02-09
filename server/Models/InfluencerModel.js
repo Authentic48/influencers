@@ -63,12 +63,15 @@ const influencerSchema = mongoose.Schema({
     youtubeAccount:{
         type: String,
         required : true,
-        default: false
     },
     isYoutuber:{
         type: Boolean,
         required : true,
         default: false
+    },
+    phoneNumber:{
+        type: Number,
+        required : true,
     },
     youtubeSubscribers:{
         type: Number,

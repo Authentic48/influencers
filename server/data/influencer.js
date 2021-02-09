@@ -12,7 +12,8 @@ const influencers =[
         instFollowers: 120623,
         youtubeAccount: true,
         youtubeSubscribers: 35000,
-        numReviews: 4
+        numReviews: 4,
+        phoneNumber: 4532553553
         
     },
     {
@@ -28,7 +29,8 @@ const influencers =[
         instFollowers: 125000,
         youtubeAccount: true,
         youtubeSubscribers: 356805,
-        numReviews: 7
+        numReviews: 7,
+        phoneNumber: 4554676553553
         
     },
 ]
