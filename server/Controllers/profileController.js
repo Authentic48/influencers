@@ -9,9 +9,29 @@ import { influencer } from '../middleware/authMiddleware.js'
 // @access  Public
 export const getProfile = asyncHandler(async (req, res) => {
     
-    const influencers = await Influencer.find({})
- 
-    res.json(influencers)
+    const pageSize = 2
+    const page = Number(req.query.pageNumber) || 1
+
+    const keyword = req.query.keyword ?
+    {
+        name: {
+            $regex: req.query.keyword,
+            $option: 'i'
+        },
+        category: {
+            $regex: req.query.keyword,
+            $option: 'i'
+        },
+        city: {
+            $regex: req.query.keyword,
+            $option: 'i'
+        }
+    } : {}
+
+    const count = await Influencer.countDocuments({ ...keyword }).limit(pageSize).skip(pageSize * (page - 1))
+    const influencers = await Influencer.find({ ...keyword })
+
+    res.json({influencers, page, pages: Math.ceil(count / pageSize) })
 })
 
 // @desc    Influencer
