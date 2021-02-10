@@ -4,6 +4,7 @@ import dotenv from 'dotenv'
 import userRouter from './Routes/userRoute.js'
 import profile from './Routes/influencerRoute.js'
 import uploadRoute from './Routes/uploadRoute.js'
+import path from 'path'
 
 import { notFound, errorHandler } from './middleware/errorHandler.js'
 import morgan from 'morgan'

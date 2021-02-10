@@ -24,3 +24,17 @@
 }
 .link:hover{ border-bottom: 3px solid #F294C0;}
 .home_link{ width: 60px;}
+
+.navbar_menu_user_name{
+    background-color: #ffff;
+    padding: 5px 5px;
+    border-radius: 35px;
+    color: #2168A6 !important;
+    margin-right: 30px;
+}
+.navbar_username{
+    font-size: 17px;
+    text-transform: lowercase;
+    margin-left: 20px;
+    margin-right: 10px;
+}
