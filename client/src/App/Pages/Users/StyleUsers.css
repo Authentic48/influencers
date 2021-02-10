@@ -1,0 +1,12 @@
+.user_main{
+    height: 100vh;
+    margin-left: 27%;
+}
+.user_card{
+    width: 700px;
+    padding: 30px;
+}
+.user_card h3{
+    color: #2168A6 !important;
+    margin: 1.5rem 0;
+}

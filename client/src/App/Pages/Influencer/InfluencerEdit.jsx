@@ -29,7 +29,7 @@ const validationSchema = Yup.object({
     instFollowers : Yup.number().required(),
   });
 
-export default function EditInfluencer({match}) {
+export default function EditInfluencer({match, history}) {
 
    const dispatch = useDispatch()
    const { influencerById, singleInfluencerLoading  } = useSelector(state => state.influencerProfile)

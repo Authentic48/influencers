@@ -12,6 +12,7 @@ import ReportPage from './App/Pages/ReportUserPage/ReportUserPage';
 import SandBox from './App/Pages/SandBox/SandBox';
 import InfluencerMain from './App/Pages/Influencer/InfluencerMain';
 import EditInfluencer from './App/Pages/Influencer/InfluencerEdit';
+import UserMainPage from './App/Pages/Users/UserMainPage';
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
    
   return (
     <div className="App">
-      {/* <Navbar  edit-profile-influencer /> */}
+      {/* <Navbar  user-profile /> */}
       <Switch>
         <Route path='/' exact component={HomePage} />
         <Route path='/login' exact component={LoginPage} />
@@ -33,6 +34,7 @@ function App() {
         <Route path='/chat-users/:id' component={ChatPage} />
         <Route path='/influencer-profile/:id' component={InfluencerMain} />
         <Route path='/editprofile/:id' component={EditInfluencer} />
+        <Route path='/user-profile/:id' component={UserMainPage} />
         <Route path='/sand' component={SandBox} />
        </Switch>
     </div>
