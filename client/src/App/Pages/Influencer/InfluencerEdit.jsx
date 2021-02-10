@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
+import {editProfile} from '../../Redux/Influencer/profile/editProfileAction'
 import { getInfluencerById } from '../../Redux/Influencer/profile/profileAction'
 
 import { Field, Form, Formik } from 'formik'
@@ -38,7 +39,7 @@ export default function EditInfluencer({match}) {
    },[dispatch, match])
    
    if (singleInfluencerLoading   ) return <Loading />
-   console.log(influencerById)
+   // console.log(influencerById)
     return (
        <>
         <Navbar />
@@ -64,6 +65,9 @@ export default function EditInfluencer({match}) {
                            youtubeAccount :influencerById?.youtubeAccount ||'',
                            youtubeSubscribers:influencerById?.youtubeSubscribers ||'',
                            numReviews: influencerById?.numReviews || 0,
+                        }}
+                        onSubmit={(values) =>{
+                           dispatch(editProfile(values, match.params.id))
                         }}
                     >
                         {({ dirty,isSubmitting, isValid, values })=>(  

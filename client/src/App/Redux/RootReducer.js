@@ -7,6 +7,7 @@ import cartReducer from './Cart/cartReducer'
 import AuthReducer from './Auth/AuthReducer';
 import influencerProfileReducer from './Influencer/profile/profileReducer';
 import {createInfluencerReducer} from './Influencer/profile/createProfileReducer';
+import editProfileReducer from './Influencer/profile/editProfileReducer';
 
 
 
@@ -20,7 +21,8 @@ const rootReducer = combineReducers({
     cart : cartReducer,
     auth: AuthReducer,
     influencerProfile : influencerProfileReducer,
-    createInfluencer : createInfluencerReducer
+    createInfluencer : createInfluencerReducer,
+    editProfile : editProfileReducer
 })
 
 export default persistReducer(persistConfig, rootReducer);

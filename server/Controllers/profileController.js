@@ -17,7 +17,7 @@ export const getProfile = asyncHandler(async (req, res) => {
         name: {
             $regex: req.query.keyword,
             $option: 'i'
-        },
+        }, 
         category: {
             $regex: req.query.keyword,
             $option: 'i'
