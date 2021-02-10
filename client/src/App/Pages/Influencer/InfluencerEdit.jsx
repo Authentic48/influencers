@@ -28,37 +28,19 @@ const validationSchema = Yup.object({
     instFollowers : Yup.number().required(),
   });
 
-export default function CreateProfilePage({match}) {
+export default function EditInfluencer({match}) {
 
    const dispatch = useDispatch()
-   const { influencerById : user, singleInfluencerLoading: loading  } = useSelector(state => state.influencerProfile)
+   const { influencerById, singleInfluencerLoading  } = useSelector(state => state.influencerProfile)
 
    useEffect(()=>{
       dispatch(getInfluencerById(match.params.id))
    },[dispatch, match])
-
-   if (loading || !user) return <Loading />
-
-   const initialValues ={
-      name:user.name ||'',
-      phoneNumber: user.phoneNumber ||'',
-      bio:user.bio ||'',
-      category:user.category ||[],
-      price: user.price ||'',
-      city: user.city ||'',
-      image: user.image ||'',
-      fbAccount:user.fbAccount ||'',
-      fbFriends: user.fbFriends ||'',
-      instAccount : user.instAccount ||'',
-      instFollowers: user.instFollowers || '',
-      isYoutuber: user.isYoutuber ||false,
-      youtubeAccount :user.youtubeAccount ||'',
-      youtubeSubscribers:user.youtubeSubscribers ||'',
-      numReviews: user.numReviews || 0,
-   }
-
+   
+   if (singleInfluencerLoading   ) return <Loading />
+   console.log(influencerById)
     return (
-       <Loading>
+       <>
         <Navbar />
         <div className='create_profile_app'>
          <div className='create_profile'>
@@ -66,7 +48,23 @@ export default function CreateProfilePage({match}) {
                <Card className='flexCol create_profile_card'>
                     <Formik
                         validationSchema={validationSchema}
-                        initialValues={initialValues}
+                        initialValues={{
+                           name:influencerById?.name ||'',
+                           phoneNumber: influencerById?.phoneNumber ||'',
+                           bio:influencerById?.bio ||'',
+                           category:influencerById?.category ||[],
+                           price: influencerById?.price ||'',
+                           city: influencerById?.city ||'',
+                           image: influencerById?.image ||'',
+                           fbAccount:influencerById?.fbAccount ||'',
+                           fbFriends: influencerById?.fbFriends ||'',
+                           instAccount : influencerById?.instAccount ||'',
+                           instFollowers: influencerById?.instFollowers || '',
+                           isYoutuber: influencerById?.isYoutuber ||false,
+                           youtubeAccount :influencerById?.youtubeAccount ||'',
+                           youtubeSubscribers:influencerById?.youtubeSubscribers ||'',
+                           numReviews: influencerById?.numReviews || 0,
+                        }}
                     >
                         {({ dirty,isSubmitting, isValid, values })=>(  
                            <Form  style={{width: '100%'}}> 
@@ -108,6 +106,6 @@ export default function CreateProfilePage({match}) {
                   </Card>
             </div>
          </div>
-        </Loading>
+        </>
     )
 }

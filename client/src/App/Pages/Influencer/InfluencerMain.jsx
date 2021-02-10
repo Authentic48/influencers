@@ -23,15 +23,16 @@ import Row from '../../Components/CartRow/Row'
 export default function InfluencerMain({history}) {
     const {currentUser} = useSelector(state => state.auth)
     const dispatch = useDispatch()
-    const {loading, influencer } = useSelector(state => state.influencerProfile)
-
+    
     useEffect(()=>{
         dispatch(getInfluencer())
     },[dispatch])
 
+    const {loading, influencer } = useSelector(state => state.influencerProfile)
+    
     if(!influencer || loading) return <Loading />
     const profile = influencer.influencers?.find(i => i.user === currentUser._id )
-    
+  
     return (
         <>
         <Navbar />
@@ -46,7 +47,7 @@ export default function InfluencerMain({history}) {
                 <SidebarRow 
                     title='Edit Profile' 
                     Icon={BorderColorIcon} 
-                    onClick={()=>history.push(`/edit-profile-influencer/${profile._id}`)} 
+                    onClick={()=>history.push(`/editprofile/${profile._id}`)} 
                 />
                 <SidebarRow title='Orders' Icon={FormatListNumberedIcon} />
                 <SidebarRow title='Chat ' Icon={ChatIcon}/>
