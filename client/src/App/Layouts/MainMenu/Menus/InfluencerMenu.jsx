@@ -21,6 +21,7 @@ export default function InfluencerMenu({currentUser, setAnchorEl,setOpenMenu,}) 
         dispatch(userLogout())
         handleClose()
     }
+    
     return (
         <>
             <MenuItem style={{ width: 220  }}  onClick={()=> history.push(`/influencer-profile/${currentUser._id}`)}>

@@ -1,0 +1,18 @@
+.sidebar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #2168A6;
+    width: 10%;
+}
+
+.sidebar_row{
+    padding: 20px;
+    border-bottom: 1px solid #045194;
+    cursor: pointer;
+}
+
+.sidebar_row_text{
+    margin-top: 15px;
+    color: white;
+}

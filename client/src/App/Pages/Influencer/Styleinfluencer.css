@@ -1,0 +1,55 @@
+.InfluencerMain{
+    background-color: #dbeeff;
+    height: auto;
+    min-height: 100vh;
+    width: 100%;
+}
+.influencer_panel{
+    display: flex;
+}
+.influencer_panel_left img{
+    height: 450px;
+    margin-top: 10rem !important;
+    width: 350px;
+    object-fit: cover;
+    margin: 0;
+    padding: 0;
+
+    border-radius: 30px;
+}
+.influencer_panel_left{
+    width: 40%;
+}
+.influencer_main_text{
+    
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+}
+.influencer_small_text{
+    font-weight: 200;
+    width: 80%;
+}
+.category_container{
+    width: 80%;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.influencer_main_text_blue{
+    color: #2168A6;
+    margin-top: 15rem;
+   
+    margin-bottom: 1rem;
+}
+.influencer_smaller_text{
+    width:25%;
+    margin-bottom: 10px;
+    font-weight: 200;
+}
+.personal_data{
+    margin-bottom: 30px;
+}
+.reviews_num{
+    margin-top: -25px;
+    margin-right: 15px;
+}

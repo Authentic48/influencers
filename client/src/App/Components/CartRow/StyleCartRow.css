@@ -59,6 +59,22 @@
    color: #ffffff !important;
    background-color: #ED2939;
 }
+
+/* ////////        rows    //////////// */
+
+.rows{
+    margin-bottom: 20px;
+
+    justify-content: space-between;
+}
+.left_text{
+    margin-right: 60px;
+}
+.right_text{
+    color: #2168A6;
+}
+
+
 @media(max-width: 500px){
     .cart_main{
         flex-direction: column;

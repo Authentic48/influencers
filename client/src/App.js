@@ -10,6 +10,7 @@ import LoginPage from './App/Pages/LoginPage/LoginPage';
 import RegisterPage from './App/Pages/RegisterPage/RegisterPage'
 import ReportPage from './App/Pages/ReportUserPage/ReportUserPage';
 import SandBox from './App/Pages/SandBox/SandBox';
+import InfluencerMain from './App/Pages/Influencer/InfluencerMain';
 
 
 function App() {
@@ -24,11 +25,12 @@ function App() {
         <Route path='/login' exact component={LoginPage} />
         <Route path='/register' exact component={RegisterPage} />
         <Route path='/influencer' exact component={InfluencerPage} />
-        <Route path ='/user-profile/:id' component={InfluencerDetailPage} />
+        <Route path ='/influencer-profile-detail/:id' component={InfluencerDetailPage} />
         <Route path='/create-profile' component={CreateProfilePage} />
         <Route path='/cart' component={CartPage} />
         <Route path='/report-influencer/:keyword' component={ReportPage} />
         <Route path='/chat-users/:id' component={ChatPage} />
+        <Route path='/influencer-profile/:id' component={InfluencerMain} />
         <Route path='/sand' component={SandBox} />
        </Switch>
     </div>
