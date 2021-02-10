@@ -45,8 +45,9 @@ const storage = multerS3({
     acl: 'public-read',
     key: function(request, file, cb) {
         //console.log(file);
-        cb(null,  `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`);
-    },   
+        cb(null, `${file.fieldname}-${Date.now()}${path.extname(file.originalname)}`);
+    },
+      
 })
 const upload = multer({
     storage: storage,
