@@ -28,8 +28,8 @@ export const getProfile = asyncHandler(async (req, res) => {
         }
     } : {}
 
-    const count = await Influencer.countDocuments({ ...keyword }).limit(pageSize).skip(pageSize * (page - 1))
-    const influencers = await Influencer.find({ ...keyword })
+    const count = await Influencer.countDocuments({ ...keyword })
+    const influencers = await Influencer.find({ ...keyword }).limit(pageSize).skip(pageSize * (page - 1))
 
     res.json({influencers, page, pages: Math.ceil(count / pageSize) })
 })
