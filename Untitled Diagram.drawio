@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2021-02-11T16:29:41.614Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" etag="s35OCilIBssk3YcDy8w6" version="14.3.1" type="github">
+<mxfile host="app.diagrams.net" modified="2021-02-11T16:30:46.280Z" agent="5.0 (Macintosh; Intel Mac OS X 10_15_6) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/14.0.3 Safari/605.1.15" etag="FZQbARaPocknxKzCZF2K" version="14.3.1" type="github">
   <diagram id="3o25HSMV5YpiCVIJ6ohV" name="Page-1">
     <mxGraphModel dx="2178" dy="921" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -43,7 +43,7 @@
         <mxCell id="mdEeN0JOD3glWhn85SWr-15" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="550" y="220" width="500" height="520" as="geometry" />
         </mxCell>
-        <mxCell id="mdEeN0JOD3glWhn85SWr-16" value="User Orders Page" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
+        <mxCell id="mdEeN0JOD3glWhn85SWr-16" value="the Order Card" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="710" y="240" width="180" height="60" as="geometry" />
         </mxCell>
         <mxCell id="mdEeN0JOD3glWhn85SWr-20" value="" style="rounded=1;whiteSpace=wrap;html=1;" parent="1" vertex="1">
