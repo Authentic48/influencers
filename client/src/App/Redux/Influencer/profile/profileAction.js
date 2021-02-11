@@ -9,11 +9,11 @@ import {
   GET_SINGLE_INFLUENCER_ERROR
 } from './profileTypes';
 
-export const getInfluencer = () => async (dispatch)=>{
+export const getInfluencer = (keyword='', pageNumber) => async (dispatch)=>{
     try {
         dispatch({type: GET_INFLUENCER_REQUEST})
 
-        const { data } = await axios.get('/api/influencers')
+        const { data } = await axios.get(`/api/influencers?keyword=${keyword}&pageNumber=${pageNumber}`)
         console.log(data);
 
         dispatch({type: GET_INFLUENCER_SUCCESS, payload: data})

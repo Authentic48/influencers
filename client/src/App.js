@@ -25,10 +25,14 @@ function App() {
     <div className="App">
       {/* <Navbar  admin/users/${users._id}/edit /> */}
       <Switch>
+        <Route path='/influencer' exact component={InfluencerPage} />
+        <Route  path='/influencer/search/:keyword' component={InfluencerPage} />
+        <Route  path='/influencer/page/:pageNumber' component={InfluencerPage} />
+        <Route  path='/influencer/search/:keyword/page/:pageNumber' component={InfluencerPage} />
+        
         <Route path='/' exact component={HomePage} />
         <Route path='/login' exact component={LoginPage} />
         <Route path='/register' exact component={RegisterPage} />
-        <Route path='/influencer' exact component={InfluencerPage} />
         <Route path ='/influencer-profile-detail/:id' component={InfluencerDetailPage} />
         <Route path='/create-profile' component={CreateProfilePage} />
         <Route path='/cart' component={CartPage} />

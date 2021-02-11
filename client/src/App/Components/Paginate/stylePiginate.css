@@ -1,0 +1,19 @@
+.pagination .pagination_main{
+    display: flex;
+    align-items: center;
+    padding: 3px;
+}
+.pagination .pagination_Link{
+    margin: 10px;
+    color: white !important;
+    background-color: #dbeeff;
+    width: 10px;
+    height: 10px;
+    border: 2px solid white;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+}

@@ -26,9 +26,12 @@ const  influencerProfileReducer = (state = initialState, {type, payload}) =>{
                 loading: true
             }
         case GET_INFLUENCER_SUCCESS:
+          
             return{
                 loading: false,
-                influencer: payload
+                influencer: payload.influencers,
+                pages: payload.pages,
+                page: payload.page
             }
         case  GET_INFLUENCER_ERROR:
             return{
