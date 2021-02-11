@@ -13,6 +13,7 @@ import SandBox from './App/Pages/SandBox/SandBox';
 import InfluencerMain from './App/Pages/Influencer/InfluencerMain';
 import EditInfluencer from './App/Pages/Influencer/InfluencerEdit';
 import UserMainPage from './App/Pages/Users/UserMainPage';
+import AdminMain from './App/Pages/Admin/AdminMain';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
    
   return (
     <div className="App">
-      {/* <Navbar  user-profile /> */}
+      {/* <Navbar  manage-admin-panel /> */}
       <Switch>
         <Route path='/' exact component={HomePage} />
         <Route path='/login' exact component={LoginPage} />
@@ -35,6 +36,7 @@ function App() {
         <Route path='/influencer-profile/:id' component={InfluencerMain} />
         <Route path='/editprofile/:id' component={EditInfluencer} />
         <Route path='/user-profile/:id' component={UserMainPage} />
+        <Route path='/manage-admin-panel' component={AdminMain} />
         <Route path='/sand' component={SandBox} />
        </Switch>
     </div>
