@@ -104,9 +104,11 @@ export const createProfile = asyncHandler(async (req, res) => {
 export const getProfileById = asyncHandler(async (req, res) => {
     
     const influencer = await Influencer.findById(req.params.id)
+
+    const otherInfluencers = await Influencer.find({ _id: { $nin: req.params.id } }).limit(2)
     if(influencer)
     {
-      res.json(influencer)
+      res.json({influencer, otherInfluencers })
     }else{
         res.status(404)
         throw new Error('Profile not found')

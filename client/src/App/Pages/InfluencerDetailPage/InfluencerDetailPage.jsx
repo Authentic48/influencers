@@ -1,4 +1,10 @@
 import React, { useEffect, useState } from 'react'
+
+import SmallCard from '../../Components/Card/SmallCard';
+import Navbar from '../../Layouts/Navbar/Navbar';
+import Loading from '../../Common/Loading/Loading';
+import Card from '../../Components/Card/Card'
+
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
 import { addItemToCart } from '../../Redux/Cart/cartAction';
@@ -13,17 +19,16 @@ import ChatIcon from '@material-ui/icons/Chat';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import ReportProblemIcon from '@material-ui/icons/ReportProblem';
 
-import SmallCard from '../../Components/Card/SmallCard';
-import Navbar from '../../Layouts/Navbar/Navbar';
+
 import { getInfluencerById } from '../../Redux/Influencer/profile/profileAction';
-import Loading from '../../Common/Loading/Loading';
+
 
 export default function InfluencerDetailPage({match}) {
 
 
     const { 
         influencerById: user, 
-        singleInfluencerLoading: loading } = useSelector(state=> state.influencerProfile)
+        singleInfluencerLoading: loading, otherInfluencer } = useSelector(state=> state.influencerProfile)
         
     const [open, setOpen ] = useState(false)
     const dispatch = useDispatch()
@@ -39,6 +44,7 @@ export default function InfluencerDetailPage({match}) {
     }
     
     if(loading || !user) return <Loading />
+    console.log(user , 'users')
     return (
         <>
          <Navbar />
@@ -99,6 +105,10 @@ export default function InfluencerDetailPage({match}) {
                     onCloseRequest={() => setOpen(false)}
                 />
             )}
+        </div>
+        <div style={{display:'flex', alignItems:'center', justifyContent:'center', flexWrap:'wrap'}}>
+            {otherInfluencer?.map(user => <Card key={user.id} user={user} />)}
+
         </div>
        </>
     )

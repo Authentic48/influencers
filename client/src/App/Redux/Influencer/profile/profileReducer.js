@@ -15,7 +15,8 @@ const initialState ={
     influencer: null,
     singleInfluencerLoading: false,
     singleInfluencerError: false,
-    influencerById : null
+    influencerById : null,
+    otherInfluencer: null,
 }
 
 
@@ -45,12 +46,14 @@ const  influencerProfileReducer = (state = initialState, {type, payload}) =>{
         case GET_SINGLE_INFLUENCER_SUCCESS:
             return{
                 singleInfluencerLoading: false,
-                influencerById: payload,
+                influencerById: payload.influencer,
+                otherInfluencer : payload.otherInfluencers,
             }
         case GET_SINGLE_INFLUENCER_ERROR:
             return{
                 singleInfluencerLoading: false,
-                singleInfluencerError: payload
+                singleInfluencerError: payload.influencer,
+
             }
         default: return state
     }
