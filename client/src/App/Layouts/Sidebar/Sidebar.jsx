@@ -4,8 +4,8 @@ import './styleSidebar.css'
 
 export default function Sidebar({children}) {
     return (
-        <div className='sidebar'>
-             <div className='sidebar_row flexCol'>
+        <div className='sidebar_main'>
+             <div className='sidebar_row_main_dev flexCol'>
                 <div  className=''>Profile</div>
             </div>
          <>

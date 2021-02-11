@@ -1,20 +1,22 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import Loading from '../../Common/Loading/Loading';
 import Navbar from '../../Layouts/Navbar/Navbar';
 import Card from '../../Components/Card/Card'
 import Paginate from '../../Components/Paginate/Paginate';
-// import { Container } from '@material-ui/core';
+import SearchIcon from '@material-ui/icons/Search';
 
 
 import { useDispatch, useSelector } from 'react-redux';
 import { getInfluencer } from '../../Redux/Influencer/profile/profileAction'
 
 import './InfluencerPage.css'
-import { Container } from '@material-ui/core';
+import { Container, IconButton } from '@material-ui/core';
+import SearchInput from '../../Components/SearchInput/SearchInput';
 
 export default function InfluencerPage({match}) {
 
+    const [openSearch, setOpenSearch] = useState(false)
     const { influencer, loading, pages, page } = useSelector(state => state.influencerProfile)
     const dispatch = useDispatch()
     const keyword = match.params.keyword
@@ -25,10 +27,21 @@ export default function InfluencerPage({match}) {
     },[dispatch, keyword, pageNumber])
 
     if(loading) return <Loading />
-    console.log(influencer, "lorem")
+    console.log(influencer, "InfluencerPage")
     return (
         <>
         <Navbar />
+        <div className='search_input'>
+           {openSearch ? <SearchInput placeholder='Search for influencers' />
+                : 
+                <div className='icon_container'> 
+                   <IconButton  onClick={() =>setOpenSearch(true)}>
+                       <SearchIcon  style={{color: '#2168A6'}}/> 
+                    </IconButton> 
+                </div>
+            }
+
+        </div>
         <div className='InfluencerPage'>
             {
                 influencer?

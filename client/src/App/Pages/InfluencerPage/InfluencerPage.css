@@ -3,5 +3,11 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    margin-top: 10rem;
+    margin-top: 5rem;
+}
+.search_input{
+    margin-top: 8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
