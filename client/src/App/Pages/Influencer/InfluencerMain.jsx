@@ -29,6 +29,7 @@ export default function InfluencerMain({history}) {
     },[dispatch])
 
     const {loading, influencer } = useSelector(state => state.influencerProfile)
+    console.log(influencer)
     
     if(!influencer || loading) return <Loading />
     const profile = influencer.influencers?.find(i => i.user === currentUser._id )

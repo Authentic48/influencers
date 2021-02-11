@@ -9,7 +9,7 @@ import { influencer } from '../middleware/authMiddleware.js'
 // @access  Public
 export const getProfile = asyncHandler(async (req, res) => {
     
-    const pageSize = 4
+    const pageSize = 1
     const page = Number(req.query.pageNumber) || 1
 
     const keyword = req.query.keyword ?
@@ -173,3 +173,16 @@ export const revewProfile = asyncHandler(async (req, res) => {
     }
    
 })
+
+// @desc    Influencer
+// @route   PUT /api/influencers
+// @access  Public
+export const getProfiles = asyncHandler(async (req, res) => {
+    
+   
+    const influencers = await Influencer.find({})
+
+    res.json(influencers )
+})
+
+
