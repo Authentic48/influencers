@@ -17,6 +17,9 @@ import AdminMain from './App/Pages/Admin/AdminMain';
 import AdminUpdateUserPage from './App/Pages/Admin/AdminUpdateUserPage';
 
 
+
+
+
 function App() {
 
  
@@ -25,6 +28,7 @@ function App() {
     <div className="App">
       {/* <Navbar  admin/users/${users._id}/edit /> */}
       <Switch>
+        
         <Route path='/influencer' exact component={InfluencerPage} />
         <Route  path='/influencer/search/:keyword' component={InfluencerPage} />
         <Route  path='/influencer/page/:pageNumber' component={InfluencerPage} />

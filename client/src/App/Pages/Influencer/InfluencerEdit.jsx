@@ -8,6 +8,7 @@ import { Field, Form, Formik } from 'formik'
 import * as Yup from 'yup'
 
 import { Button, Card } from '@material-ui/core'
+import { useSnackbar } from 'notistack';
 
 import {  citiesData, CategoriesOptions } from '../../API/options'
 
@@ -32,6 +33,7 @@ const validationSchema = Yup.object({
 export default function EditInfluencer({match, history}) {
 
    const dispatch = useDispatch()
+   const { enqueueSnackbar } = useSnackbar();
    const { influencerById, singleInfluencerLoading  } = useSelector(state => state.influencerProfile)
 
    useEffect(()=>{
@@ -68,6 +70,8 @@ export default function EditInfluencer({match, history}) {
                         }}
                         onSubmit={(values) =>{
                            dispatch(editProfile(values, match.params.id))
+                           enqueueSnackbar('Success, Profile Updated',{variant : 'success'} );
+                           history.goBack()
                         }}
                     >
                         {({ dirty,isSubmitting, isValid, values })=>(  
@@ -100,8 +104,13 @@ export default function EditInfluencer({match, history}) {
                                  </>
                               }
                               <div className='card_btn' >
-                                 <Button  type='submit' variant="contained" color="primary">
-                                       Create
+                                 <Button  
+                                    disabled={!isValid || isSubmitting || !dirty}  
+                                    type='submit' 
+                                    variant="contained" 
+                                    color="primary"
+                                 >
+                                       Save
                                  </Button>
                               </div>
                            </Form>

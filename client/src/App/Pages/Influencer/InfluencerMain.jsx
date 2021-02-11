@@ -32,7 +32,7 @@ export default function InfluencerMain({history}) {
     console.log(influencer)
     
     if(!influencer || loading) return <Loading />
-    const profile = influencer.influencers?.find(i => i.user === currentUser._id )
+    const profile = influencer?.find(i => i.user === currentUser._id )
   
     return (
         <>

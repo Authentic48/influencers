@@ -3,6 +3,8 @@ import { Formik, Form }  from 'formik'
 
 import * as Yup from 'yup'
 import FormInput from '../../Components/FromField/FormInput';
+import { useSnackbar } from 'notistack';
+
 
 import { Button, Card } from '@material-ui/core';
 import Navbar from '../../Layouts/Navbar/Navbar';
@@ -16,9 +18,11 @@ const validationSchema = Yup.object({
    
   });
 
-export default function ReportUserPage({match}) {
+export default function ReportUserPage({match, history}) {
 
     const keyword = match.params.keyword;
+    const { enqueueSnackbar } = useSnackbar();
+
     return (
         <>
         <Navbar />
@@ -29,7 +33,10 @@ export default function ReportUserPage({match}) {
                     <Formik
                         validationSchema={validationSchema}
                         initialValues={{ email: '', topic:'', description: '', influencerName: keyword ||''}}
-                        onSubmit={(values) => console.log(values)}
+                        onSubmit={(values) => {
+                            enqueueSnackbar('we will check your report and get back to you',{variant : 'success'} );
+                            history.goBack()
+                        }}
                     >
                     {({ dirty,isSubmitting, isValid })=>(
                         <Form >
@@ -49,7 +56,12 @@ export default function ReportUserPage({match}) {
                                 placeholder='Tell us, What happened?' />
                         
                             <div className='card_btn' >
-                                <Button type='submit' variant="contained" color="primary">
+                                <Button  
+                                    disabled={!isValid || isSubmitting || !dirty} 
+                                    type='submit' 
+                                    variant="contained" 
+                                    color="primary"
+                                >
                                     Report
                                 </Button>
                                 </div>

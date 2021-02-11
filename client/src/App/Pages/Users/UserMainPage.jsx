@@ -9,6 +9,8 @@ import Sidebar from '../../Layouts/Sidebar/Sidebar'
 import SidebarRow from '../../Layouts/Sidebar/SidebarRow/SidebarRow'
 
 import { Button, Card } from '@material-ui/core';
+import { useSnackbar } from 'notistack';
+
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder'
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
@@ -27,7 +29,8 @@ const validationSchema = Yup.object({
 export default function UserMainPage({history}) {
 
     const { currentUser } = useSelector(state => state.auth)
-
+    const { enqueueSnackbar } = useSnackbar();
+    
     return (
         <>
         <Navbar />
@@ -43,7 +46,10 @@ export default function UserMainPage({history}) {
                     <Formik
                         validationSchema={validationSchema}
                         initialValues={{ name: currentUser?.name ||'', password: '', confirmPassword: ''}}
-                        onSubmit={(values) => console.log(values)}
+                        onSubmit={(values) => {
+                            enqueueSnackbar('we will check your report and get back to you',{variant : 'success'} );
+                            console.log(values)
+                        }}
                     >
                         {({ dirty,isSubmitting, isValid })=>(
                             <Form >
@@ -51,7 +57,12 @@ export default function UserMainPage({history}) {
                                 <FormInput variant="outlined"  name='password' label='Password' type='password'  />
                                 <FormInput variant="outlined"  name='confirmPassword' label='Confirm Password' type='password'  />
                                 <div className='card_btn' >
-                                    <Button type='submit' variant="contained" color="primary">
+                                    <Button  
+                                        disabled={!isValid || isSubmitting || !dirty}  
+                                        type='submit' 
+                                        variant="contained" 
+                                        color="primary"
+                                    >
                                         Update
                                     </Button>
                                 </div>

@@ -11,6 +11,7 @@ import Navbar from '../../Layouts/Navbar/Navbar';
 import FromInput from '../../Components/FromField/FormInput';
 import FromSelect from '../../Components/FromField/FromSelect'
 import { useDispatch } from 'react-redux'
+import { useSnackbar } from 'notistack';
 import { createProfile } from '../../Redux/Influencer/profile/createProfileActions'
 
 const validationSchema = Yup.object({
@@ -25,10 +26,10 @@ const validationSchema = Yup.object({
     instFollowers : Yup.number().required(),
   });
 
-export default function CreateProfilePage() {
+export default function CreateProfilePage({history}) {
 
    const dispatch = useDispatch()
-
+   const { enqueueSnackbar } = useSnackbar();
     return (
        <>
         <Navbar />
@@ -39,6 +40,8 @@ export default function CreateProfilePage() {
                   <Formik
                      onSubmit={(values) => {
                         dispatch(createProfile(values))
+                        enqueueSnackbar('Success, You Create New Profile',{variant : 'success'} );
+                        history.goBack()
                      }}
                      validationSchema={validationSchema}
                      initialValues={initialValues}
@@ -75,7 +78,12 @@ export default function CreateProfilePage() {
                                  </>
                               }
                               <div className='card_btn' >
-                                 <Button  type='submit' variant="contained" color="primary">
+                                 <Button  
+                                    type='submit' 
+                                    variant="contained" 
+                                    disabled={!isValid || isSubmitting || !dirty} 
+                                    color="primary"
+                                    >
                                        Create
                                  </Button>
                               </div>
