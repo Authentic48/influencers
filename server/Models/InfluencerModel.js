@@ -66,7 +66,7 @@ const influencerSchema = mongoose.Schema({
     },
     isYoutuber:{
         type: Boolean,
-        required : true,
+      
         default: false
     },
     phoneNumber:{
@@ -75,7 +75,6 @@ const influencerSchema = mongoose.Schema({
     },
     youtubeSubscribers:{
         type: Number,
-        required : true,
         default: 0
     },
     numReviews:{

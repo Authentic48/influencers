@@ -32,7 +32,7 @@ export default function InfluencerPage({match}) {
         <>
         <Navbar />
         <div className='search_input'>
-           {openSearch ? <SearchInput placeholder='Search for influencers' />
+           {openSearch ? <SearchInput placeholder='Search for influencers' Icon={SearchIcon} />
                 : 
                 <div className='icon_container'> 
                    <IconButton  onClick={() =>setOpenSearch(true)}>

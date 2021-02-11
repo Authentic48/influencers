@@ -19,13 +19,13 @@ export default function SearchInput({Icon, placeholder }) {
     }
     return (
         <form onSubmit={(e) =>handleSubmit(e)} className='custom_input'  >
-            {Icon && <Icon style={{color: 'gray'}} />}
             <input 
             value={keyword} 
             onChange={(e) => setKeyword(e.target.value)} 
             className='custom_input__input' 
             placeholder={placeholder} />
             <button type='submit' style={{display: 'none'}}></button>
+            {Icon && <Icon style={{color: 'gray'}} />}
         </form>
     )
 }
