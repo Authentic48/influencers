@@ -24,7 +24,6 @@ const users =[
         email: 'guest@gmail.com',
         password: bcrypt.hashSync('112233'),
     },
-
     {
         name: 'Ahmed Mostafa',
         email: 'influencer2@gmail.com',

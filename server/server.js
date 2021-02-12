@@ -3,6 +3,8 @@ import connectDB from './Config/db.js'
 import dotenv from 'dotenv'
 import userRouter from './Routes/userRoute.js'
 import profile from './Routes/influencerRoute.js'
+import report from './Routes/reportRoute.js'
+
 // import uploadRoute from './Routes/uploadRoute.js'
 import path from 'path'
 
@@ -25,6 +27,8 @@ app.use(express.json())
 
 app.use('/api/users', userRouter)
 app.use('/api/influencers', profile)
+app.use('/api/influencers', report)
+
 // app.use('/api/upload', uploadRoute)
 
 const PORT = process.env.PORT || 5000;
