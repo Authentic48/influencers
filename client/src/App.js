@@ -15,6 +15,7 @@ import EditInfluencer from './App/Pages/Influencer/InfluencerEdit';
 import UserMainPage from './App/Pages/Users/UserMainPage';
 import AdminMain from './App/Pages/Admin/AdminMain';
 import AdminUpdateUserPage from './App/Pages/Admin/AdminUpdateUserPage';
+import AdminControlInfluencer from './App/Pages/Admin/AdminControlInfluencer';
 
 
 
@@ -26,27 +27,31 @@ function App() {
    
   return (
     <div className="App">
-      {/* <Navbar  admin/users/${users._id}/edit /> */}
+      {/* <Navbar  admin-manage-influencer /> */}
       <Switch>
-        
+        <Route path='/' exact component={HomePage} />
+        <Route path='/login' exact component={LoginPage} />
+        <Route path='/register' exact component={RegisterPage} />
+        <Route path='/cart' component={CartPage} />
+                  {/* influencer Page Route public   */}
         <Route path='/influencer' exact component={InfluencerPage} />
         <Route  path='/influencer/search/:keyword' component={InfluencerPage} />
         <Route  path='/influencer/page/:pageNumber' component={InfluencerPage} />
         <Route  path='/influencer/search/:keyword/page/:pageNumber' component={InfluencerPage} />
-        
-        <Route path='/' exact component={HomePage} />
-        <Route path='/login' exact component={LoginPage} />
-        <Route path='/register' exact component={RegisterPage} />
+           {/* influencer Pages Route Private  influencer  */}
         <Route path ='/influencer-profile-detail/:id' component={InfluencerDetailPage} />
-        <Route path='/create-profile' component={CreateProfilePage} />
-        <Route path='/cart' component={CartPage} />
-        <Route path='/report-influencer/:id' component={ReportPage} />
-        <Route path='/chat-users/:id' component={ChatPage} />
         <Route path='/influencer-profile/:id' component={InfluencerMain} />
         <Route path='/editprofile/:id' component={EditInfluencer} />
+        <Route path='/create-profile' component={CreateProfilePage} />
+
+        <Route path='/report-influencer/:id' component={ReportPage} />
+        <Route path='/chat-users/:id' component={ChatPage} />
         <Route path='/user-profile/:id' component={UserMainPage} />
+                {/* Admin Page Route    */}
         <Route path='/manage-admin-panel' component={AdminMain} />
         <Route path='/admin/users/:id/edit' component={AdminUpdateUserPage} />
+        <Route path='/admin-manage-influencer' component={AdminControlInfluencer} />
+         {/* Sand Box    */}
         <Route path='/sand' component={SandBox} />
        </Switch>
     </div>

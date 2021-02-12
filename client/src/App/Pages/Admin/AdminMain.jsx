@@ -48,7 +48,7 @@ export default function AdminMain({history}) {
         <div className='flex'>
             <Sidebar>
                 <SidebarRow title='users' Icon={AccountBoxIcon}/>  
-                <SidebarRow title='influencers' Icon={AccountCircleIcon}/>
+                <SidebarRow title='influencers' Icon={AccountCircleIcon} onClick={()=> history.push('admin-manage-influencer')}/>
                 <SidebarRow title='Orders'  Icon={FormatListNumberedIcon}/>
                 <SidebarRow title='user chat' Icon={ChatIcon}  />
                 <SidebarRow title='infl chat' Icon={ChatIcon}  />

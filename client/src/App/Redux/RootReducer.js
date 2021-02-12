@@ -7,7 +7,7 @@ import cartReducer from './Cart/cartReducer'
 import AuthReducer from './Auth/AuthReducer';
 import influencerProfileReducer from './Influencer/profile/profileReducer';
 import {createInfluencerReducer} from './Influencer/profile/createProfileReducer';
-import editProfileReducer from './Influencer/profile/editProfileReducer';
+import {editProfileReducer, deleteProfileReducer} from './Influencer/profile/editProfileReducer';
 import {usersReducer, deleteUserReducer} from './Users/userReducer';
 import reportReducer from './Report/reportReducer';
 import PhotoReducer from './Influencer/photos/PhotoReducer';
@@ -26,6 +26,7 @@ const rootReducer = combineReducers({
     influencerProfile : influencerProfileReducer,
     createInfluencer : createInfluencerReducer,
     editProfile : editProfileReducer,
+    deleteProfile : deleteProfileReducer,
     users: usersReducer,
     deleteUser : deleteUserReducer,
     report : reportReducer,
