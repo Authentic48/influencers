@@ -16,6 +16,7 @@ import UserMainPage from './App/Pages/Users/UserMainPage';
 import AdminMain from './App/Pages/Admin/AdminMain';
 import AdminUpdateUserPage from './App/Pages/Admin/AdminUpdateUserPage';
 import AdminControlInfluencer from './App/Pages/Admin/AdminControlInfluencer';
+import AdminControlReports from './App/Pages/Admin/AdminControlReports';
 
 
 
@@ -27,7 +28,7 @@ function App() {
    
   return (
     <div className="App">
-      {/* <Navbar  admin-manage-influencer /> */}
+      {/* <Navbar  admin-manage-reports /> */}
       <Switch>
         <Route path='/' exact component={HomePage} />
         <Route path='/login' exact component={LoginPage} />
@@ -49,6 +50,7 @@ function App() {
         <Route path='/user-profile/:id' component={UserMainPage} />
                 {/* Admin Page Route    */}
         <Route path='/manage-admin-panel' component={AdminMain} />
+        <Route path='/admin-manage-reports' component={AdminControlReports} />
         <Route path='/admin/users/:id/edit' component={AdminUpdateUserPage} />
         <Route path='/admin-manage-influencer' component={AdminControlInfluencer} />
          {/* Sand Box    */}

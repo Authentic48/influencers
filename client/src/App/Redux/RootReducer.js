@@ -9,7 +9,7 @@ import influencerProfileReducer from './Influencer/profile/profileReducer';
 import {createInfluencerReducer} from './Influencer/profile/createProfileReducer';
 import {editProfileReducer, deleteProfileReducer} from './Influencer/profile/editProfileReducer';
 import {usersReducer, deleteUserReducer} from './Users/userReducer';
-import reportReducer from './Report/reportReducer';
+import {reportReducer, getReportReducer} from './Report/reportReducer';
 import PhotoReducer from './Influencer/photos/PhotoReducer';
 
 
@@ -30,6 +30,7 @@ const rootReducer = combineReducers({
     users: usersReducer,
     deleteUser : deleteUserReducer,
     report : reportReducer,
+    reports : getReportReducer,
     photos:  PhotoReducer
 })
 

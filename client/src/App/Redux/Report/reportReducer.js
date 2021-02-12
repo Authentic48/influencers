@@ -1,18 +1,21 @@
-
 import {
     CREATE_REPORT_ERROR,
     CREATE_REPORT_REQUEST, 
-    CREATE_REPORT_SUCCESS
+    CREATE_REPORT_SUCCESS,
+    GET_REPORT_SUCCESS,
+    GET_REPORT_REQUEST,
+    GET_REPORT_ERROR
   } from './reportTypes';
-
+  
   
 const initialState = {
     loading: false,
     success : false,
-    error : null
+    error : null,
+    reports: null,
 }
 
-const reportReducer = (state = initialState, { type, payload} ) =>{
+export const reportReducer = (state = initialState, { type, payload} ) =>{
     switch(type) {
         case CREATE_REPORT_REQUEST : 
             return{
@@ -32,4 +35,24 @@ const reportReducer = (state = initialState, { type, payload} ) =>{
     }
 }
 
-export default reportReducer;
+
+
+export const getReportReducer = (state = initialState, { type, payload} ) =>{
+    switch(type) {
+        case GET_REPORT_REQUEST : 
+            return{
+                loading : true
+            }
+        case GET_REPORT_SUCCESS:
+            return{
+                loading : false,
+                reports: payload
+            }
+        case GET_REPORT_ERROR:
+            return{
+                loading : false,
+                error: payload
+            }
+        default: return state
+    }
+}

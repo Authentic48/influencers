@@ -5,6 +5,7 @@
     background-color: #2168A6;
     height: 100%;
     width: 10%;
+    overflow-y: scroll;
 }
 
 .sidebar_row_main_dev{

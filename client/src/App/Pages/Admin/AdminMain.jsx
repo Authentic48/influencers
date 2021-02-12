@@ -26,6 +26,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import AccountBoxIcon from '@material-ui/icons/AccountBox';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import ChatIcon from '@material-ui/icons/Chat';
+import ReportIcon from '@material-ui/icons/Report';
 import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 
 
@@ -50,6 +51,7 @@ export default function AdminMain({history}) {
                 <SidebarRow title='users' Icon={AccountBoxIcon}/>  
                 <SidebarRow title='influencers' Icon={AccountCircleIcon} onClick={()=> history.push('admin-manage-influencer')}/>
                 <SidebarRow title='Orders'  Icon={FormatListNumberedIcon}/>
+                <SidebarRow title='Report'  Icon={ReportIcon} onClick={()=>history.push('/admin-manage-reports')}/>
                 <SidebarRow title='user chat' Icon={ChatIcon}  />
                 <SidebarRow title='infl chat' Icon={ChatIcon}  />
             </Sidebar>  
