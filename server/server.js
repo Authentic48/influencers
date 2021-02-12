@@ -27,7 +27,7 @@ app.use(express.json())
 
 app.use('/api/users', userRouter)
 app.use('/api/influencers', profile)
-app.use('/api/influencers', report)
+app.use('/api/reports', report)
 
 // app.use('/api/upload', uploadRoute)
 

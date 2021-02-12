@@ -40,10 +40,12 @@ const importDataToDb = async() =>{
         report1.user = createdUser[0]._id;
         report1.name = createdUser[0].name;
         report1.influencer = createdInfluencers[0]._id;
+        report1.infName = createdInfluencers[0].name;
 
         report2.user = createdUser[3]._id;
         report2.name = createdUser[3].name;
         report2.influencer = createdInfluencers[1]._id;
+        report2.infName = createdInfluencers[1].name;
 
         const reportedProfile = [report1, report2 ]
 

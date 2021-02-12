@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
 
 const reportSchema = mongoose.Schema({
+
     name:{ type: String, required: true },
     description:{ type: String, required: true},
     user:{
@@ -12,7 +13,8 @@ const reportSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         required: true,
         ref: 'Influencer'
-    }
+    },
+    infName:{ type: String, required: true },
 },{
     timestamps: true
 })
