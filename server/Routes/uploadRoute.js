@@ -38,6 +38,7 @@ function checkFileType(file, cb) {
   }
 }
 
+ 
 
 const storage = multerS3({
     s3: s3,
@@ -49,6 +50,7 @@ const storage = multerS3({
     },
       
 })
+
 const upload = multer({
     storage: storage,
     fileFilter: function (req, file, cb) {
@@ -57,7 +59,7 @@ const upload = multer({
 });
 
 router.post('/', upload.single('image'), (req, res) => {
-  res.send(`file upload successfully..`)
+  res.send(`/${req.file.path}`)
 })
 
 export default router

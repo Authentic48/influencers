@@ -1,61 +1,15 @@
-import React from 'react'
-
-import { FormControl, Input, InputLabel, MenuItem, Select } from '@material-ui/core';
-
-
-
-const names = [
-  'Oliver Hansen',
-  'Van Henry',
-  'April Tucker',
-  'Ralph Hubbard',
-  'Omar Alexander',
-  'Carlos Abbott',
-  'Miriam Wagner', 
-  'Bradley Wilkerson',
-  'Virginia Andrews',
-  'Kelly Snyder',
-];
-
-
-
-
+import React,{ useState } from 'react'
+import { useDispatch } from 'react-redux'
+import {uploadFile} from '../../Redux/Influencer/photos/PhotosAction';
 
 export default function SandBox() {
-
-  
-  const [personName, setPersonName] = React.useState([]);
-
-  const handleChange = (event) => {
-    setPersonName(event.target.value);
-  };
-
-  
-    return (
-        <div style={{
-            margin: 150,
-        }}>
-            <h1>
-                Hello, World
-            </h1>
-            <FormControl style={{width:'100%'}}>
-        <InputLabel id="demo-mutiple-name-label">Name</InputLabel>
-        <Select
-          labelId="demo-mutiple-name-label"
-          id="demo-mutiple-name"
-          input={<Input />}
-          multiple
-          value={personName}
-          onChange={handleChange}
-          
-        >
-          {names.map((name) => (
-            <MenuItem key={name} value={name} >
-              {name}
-            </MenuItem>
-          ))}
-        </Select>
-      </FormControl>
-        </div>
-    )
+  const [ photos , setPhotos] = useState([])
+  const dispatch = useDispatch ()
+  return (
+    <div style={{margin: 100}}>
+      <input type='file'  onChange={(event)=>setPhotos(event.target.files[0])} />
+      <button onClick={() => dispatch(uploadFile(photos))}> upload</button>
+    </div>
+  )
 }
+

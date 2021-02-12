@@ -10,6 +10,7 @@ import {createInfluencerReducer} from './Influencer/profile/createProfileReducer
 import editProfileReducer from './Influencer/profile/editProfileReducer';
 import {usersReducer, deleteUserReducer} from './Users/userReducer';
 import reportReducer from './Report/reportReducer';
+import PhotoReducer from './Influencer/photos/PhotoReducer';
 
 
 
@@ -27,7 +28,8 @@ const rootReducer = combineReducers({
     editProfile : editProfileReducer,
     users: usersReducer,
     deleteUser : deleteUserReducer,
-    report : reportReducer
+    report : reportReducer,
+    photos:  PhotoReducer
 })
 
 export default persistReducer(persistConfig, rootReducer);
