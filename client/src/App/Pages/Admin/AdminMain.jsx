@@ -35,10 +35,11 @@ export default function AdminMain({history}) {
     const dispatch = useDispatch()
     const { users, loading } = useSelector(state => state.users)
     const { success } = useSelector(state => state.deleteUser)
+    const { success : successUpdated  } = useSelector(state => state.adminUpdateUser)
     
     useEffect(()=>{
         dispatch(getUsers())
-    },[dispatch, success])
+    },[dispatch, success, successUpdated])
 
 
     if (loading) return <Loading />

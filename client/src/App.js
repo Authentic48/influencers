@@ -14,7 +14,7 @@ import InfluencerMain from './App/Pages/Influencer/InfluencerMain';
 import EditInfluencer from './App/Pages/Influencer/InfluencerEdit';
 import UserMainPage from './App/Pages/Users/UserMainPage';
 import AdminMain from './App/Pages/Admin/AdminMain';
-import AdminUpdateUserPage from './App/Pages/Admin/AdminUpdateUserPage';
+import AdminControlUser from './App/Pages/Admin/AdminControlUser';
 import AdminControlInfluencer from './App/Pages/Admin/AdminControlInfluencer';
 import AdminControlReports from './App/Pages/Admin/AdminControlReports';
 
@@ -51,7 +51,7 @@ function App() {
                 {/* Admin Page Route    */}
         <Route path='/manage-admin-panel' component={AdminMain} />
         <Route path='/admin-manage-reports' component={AdminControlReports} />
-        <Route path='/admin/users/:id/edit' component={AdminUpdateUserPage} />
+        <Route path='/admin/users/:id/edit' component={AdminControlUser} />
         <Route path='/admin-manage-influencer' component={AdminControlInfluencer} />
          {/* Sand Box    */}
         <Route path='/sand' component={SandBox} />

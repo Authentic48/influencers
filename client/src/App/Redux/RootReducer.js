@@ -11,6 +11,7 @@ import {editProfileReducer, deleteProfileReducer} from './Influencer/profile/edi
 import {usersReducer, deleteUserReducer} from './Users/userReducer';
 import {reportReducer, getReportReducer} from './Report/reportReducer';
 import PhotoReducer from './Influencer/photos/PhotoReducer';
+import { userReducer, adminUpdateUserReducer } from "./Admin/Users/usersReducer";
 
 
 
@@ -28,6 +29,8 @@ const rootReducer = combineReducers({
     editProfile : editProfileReducer,
     deleteProfile : deleteProfileReducer,
     users: usersReducer,
+    user : userReducer,
+    adminUpdateUser : adminUpdateUserReducer,
     deleteUser : deleteUserReducer,
     report : reportReducer,
     reports : getReportReducer,

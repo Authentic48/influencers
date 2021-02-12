@@ -23,6 +23,7 @@ const validationSchema = Yup.object({
 export default function ReportUserPage({match, history}) {
 
     const { isAuthenticated } = useSelector(state => state.auth)
+    const { enqueueSnackbar } = useSnackbar();
     const dispatch  = useDispatch()
 
     useEffect(()=>{
@@ -32,7 +33,7 @@ export default function ReportUserPage({match, history}) {
     },[history, isAuthenticated])
 
     const id = match.params.id;
-    const { enqueueSnackbar } = useSnackbar();
+    
 
     return (
         <>

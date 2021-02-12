@@ -1,12 +1,18 @@
-import React from 'react'
-import { Formik, Form, Field }  from 'formik'
+import React, { useEffect } from 'react'
 
+import { useSnackbar } from 'notistack';
+import { useDispatch, useSelector } from 'react-redux';
+import { AdminUpdateUser, getUserById } from '../../Redux/Admin/Users/usersAction'
+
+import { Formik, Form, Field }  from 'formik'
 import * as Yup from 'yup'
+
 import FormInput from '../../Components/FromField/FormInput';
+import Navbar from '../../Layouts/Navbar/Navbar';
 
 import { Button, Card } from '@material-ui/core';
-import Navbar from '../../Layouts/Navbar/Navbar';
-import { useSelector } from 'react-redux';
+import Loading from '../../Common/Loading/Loading';
+
 
 
 const validationSchema = Yup.object({
@@ -17,17 +23,25 @@ const validationSchema = Yup.object({
    
 });
 
-export default function AdminUpdateUserPage({match}) {
+export default function AdminControlUser({match, history}) {
 
-    const { currentUser } = useSelector(state => state.auth)
+    const { user, loading } = useSelector(state => state.user)
+    const { enqueueSnackbar } = useSnackbar();
+    const dispatch = useDispatch()
+
+    useEffect(()=>{
+        dispatch(getUserById(match.params.id))
+    },[dispatch, match])
 
     const initialValues={
-        name: currentUser?.name || '',
-        email: currentUser?.email || '',
-        isAdmin: currentUser?.isAdmin || false,
-        isInfluencer: currentUser?.isInfluencer || false
+        name: user?.name || '',
+        email: user?.email || '',
+        isAdmin: user?.isAdmin || false,
+        isInfluencer: user?.isInfluencer || false
     }
-    console.log(currentUser)
+  
+    if (loading) return <Loading />
+    console.log(user)
 
     return (
         <>
@@ -39,7 +53,11 @@ export default function AdminUpdateUserPage({match}) {
                     <Formik
                         validationSchema={validationSchema}
                         initialValues={initialValues}
-                        onSubmit={(values) => console.log(values)}
+                        onSubmit={(values) =>{
+                            dispatch(AdminUpdateUser(match.params.id, values))
+                            enqueueSnackbar('success, Admin has updated User',{variant : 'success'} );
+                            history.goBack()
+                        } }
                     >
                         {({ dirty,isSubmitting, isValid })=>(
                             <Form >
@@ -54,7 +72,12 @@ export default function AdminUpdateUserPage({match}) {
                                     <Field type='checkbox' name='isInfluencer' />
                                 </div>
                                 <div className='card_btn' >
-                                    <Button type='submit' variant="contained" color="primary">
+                                    <Button 
+                                        disabled={!isValid || isSubmitting || !dirty} 
+                                        type='submit' 
+                                        variant="contained" 
+                                        color="primary"
+                                    >
                                         Update
                                     </Button>
                                 </div>
