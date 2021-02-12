@@ -40,7 +40,7 @@ function App() {
         <Route path ='/influencer-profile-detail/:id' component={InfluencerDetailPage} />
         <Route path='/create-profile' component={CreateProfilePage} />
         <Route path='/cart' component={CartPage} />
-        <Route path='/report-influencer/:keyword' component={ReportPage} />
+        <Route path='/report-influencer/:id' component={ReportPage} />
         <Route path='/chat-users/:id' component={ChatPage} />
         <Route path='/influencer-profile/:id' component={InfluencerMain} />
         <Route path='/editprofile/:id' component={EditInfluencer} />

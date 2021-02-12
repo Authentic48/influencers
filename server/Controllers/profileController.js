@@ -2,7 +2,6 @@
 import User from '../models/userModel.js'
 import Influencer from '../models/influencerModel.js'
 import asyncHandler from 'express-async-handler'
-import { influencer } from '../middleware/authMiddleware.js'
 
 // @desc    Influencer
 // @route   PUT /api/influencers
@@ -64,14 +63,7 @@ export const updatedProfile = asyncHandler(async (req, res) => {
 // @access  Private/Influencer
 export const createProfile = asyncHandler(async (req, res) => {
     
-    const {name, image, bio, city, price, category, fbAccount, fbFriends, instAccount, instFollowers, youtubeAccount, youtubeSubscribers,isYoutuber, phoneNumber} = req.body;
-    // const alreadycreated = await Influencer.find(r => r.user.toString() === req.user._id.toString())
-    // if(alreadycreated)
-    // {
-    //     res.status(400)
-    //     throw new Error('Influencer already created')
-    // }
-      
+    const {name, image, bio, city, price, category, fbAccount, fbFriends, instAccount, instFollowers, youtubeAccount, youtubeSubscribers,isYoutuber, phoneNumber} = req.body;      
     const influencer = new Influencer({
         user: req.user._id,
         city,

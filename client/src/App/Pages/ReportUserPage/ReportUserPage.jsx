@@ -1,26 +1,37 @@
-import React from 'react'
-import { Formik, Form }  from 'formik'
+import React, { useEffect } from 'react'
 
+import { useDispatch, useSelector } from 'react-redux';
+import { createReport } from '../../Redux/Report/reportAction'
+
+import { Formik, Form }  from 'formik'
 import * as Yup from 'yup'
 import FormInput from '../../Components/FromField/FormInput';
+
 import { useSnackbar } from 'notistack';
-
-
 import { Button, Card } from '@material-ui/core';
 import Navbar from '../../Layouts/Navbar/Navbar';
 
 
 const validationSchema = Yup.object({
-    influencerName:  Yup.string().required(),
-    email: Yup.string().required().email(),
+    infName:  Yup.string().required(),
     description: Yup.string().required().min(20),
     topic : Yup.string().required(),
    
   });
 
+
 export default function ReportUserPage({match, history}) {
 
-    const keyword = match.params.keyword;
+    const { isAuthenticated } = useSelector(state => state.auth)
+    const dispatch  = useDispatch()
+
+    useEffect(()=>{
+        if (!isAuthenticated) {
+            history.push('/login')
+        }
+    },[history, isAuthenticated])
+
+    const id = match.params.id;
     const { enqueueSnackbar } = useSnackbar();
 
     return (
@@ -28,24 +39,25 @@ export default function ReportUserPage({match, history}) {
         <Navbar />
         <div className='create_profile_app'>
             <div className='create_profile'>
-                <h1>Here you can report {keyword}</h1>
+                <h1>Here you can report influencer</h1>
                 <Card className='flexCol create_profile_card'>
                     <Formik
                         validationSchema={validationSchema}
-                        initialValues={{ email: '', topic:'', description: '', influencerName: keyword ||''}}
+                        initialValues={{ infName: '', topic:'', description: '',}}
                         onSubmit={(values) => {
                             enqueueSnackbar('we will check your report and get back to you',{variant : 'success'} );
                             history.goBack()
+                            dispatch(createReport({
+                                influencer : id,
+                                description : values.description,
+                                infName : values.infName
+
+                            }))
                         }}
                     >
                     {({ dirty,isSubmitting, isValid })=>(
                         <Form >
-                            <FormInput variant="outlined"  name='influencerName' label='Influencer Name'  />
-                            <FormInput 
-                                variant="outlined"  
-                                name='email' 
-                                label='Your Email' 
-                                placeholder='example@example.com' />
+                            <FormInput variant="outlined"  name='infName' label='Influencer Name'  />
                             <FormInput variant="outlined"   name='topic' label='Topic'/>
                             <FormInput 
                                 name='description' 
@@ -54,7 +66,6 @@ export default function ReportUserPage({match, history}) {
                                 rows={4}
                                 label='Description' 
                                 placeholder='Tell us, What happened?' />
-                        
                             <div className='card_btn' >
                                 <Button  
                                     disabled={!isValid || isSubmitting || !dirty} 

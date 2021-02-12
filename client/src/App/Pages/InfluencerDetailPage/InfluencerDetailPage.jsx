@@ -86,7 +86,7 @@ export default function InfluencerDetailPage({match}) {
              </div>
 
              <div className='buttons_group flex_center'>
-                <button onClick={()=> history.push(`/chat-users/${user.id}`)} className='flex send_message'>
+                <button onClick={()=> history.push(`/chat-users/${user._id}`)} className='flex send_message'>
                     Send Message
                     <ChatIcon />
                 </button>
@@ -94,7 +94,7 @@ export default function InfluencerDetailPage({match}) {
                     Add to Favorite
                     <FavoriteBorderIcon />
                 </button>
-                <button onClick={()=> history.push(`/report-influencer/${user.name}`)} className='flex report_btn'>
+                <button onClick={()=> history.push(`/report-influencer/${user._id}`)} className='flex report_btn'>
                     Report Influencer
                     <ReportProblemIcon />
                 </button>
