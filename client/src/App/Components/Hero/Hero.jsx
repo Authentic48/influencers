@@ -22,7 +22,7 @@ export default function Hero() {
                             />
                         </div>
                         <h3>
-                            Let's get in Business with influencer easily
+                            Connect Business with influencers easily
                         </h3>
                         <button className='flex hero_btn'>
                             View influencer

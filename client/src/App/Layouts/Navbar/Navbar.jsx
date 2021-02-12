@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 import {  useSelector } from 'react-redux';
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import MainMenu from '../MainMenu/MainMenu'
 
@@ -15,6 +15,8 @@ import './StyleNavbar.css'
 
 
 export default function Navbar({inverted}) {
+
+    const history = useHistory()
     const [open, setOpen] = useState(false)
     const [anchorEl, setAnchorEl] = useState(null);
     const [openMenu, setOpenMenu] = useState(false)
@@ -30,18 +32,16 @@ export default function Navbar({inverted}) {
     return (
         <>
         <div className={inverted ? 'nav_hidden' :'nav flex_between '}>
-            <div className='logo'>LOGO</div>
+            <div className='logo ' onClick={() => history.push('/')}>LOGO</div>
             <div className='links flex'>
               <Hidden smDown>
-                    <Link to='/'  className='link home_link'>Home </Link >
-                    <Link to='/influencer' className='link'>Influencer</Link >
-                    <Link to='/cart' className='link'>Favorites</Link >
-                   {!isAuthenticated? <Link to='/login' className='link home_link' >Login</Link >:
-                    <div onClick={(e)=> handleClick(e)} className=' flex navbar_menu_user_name'>
-                        <h3 className='navbar_username'>{currentUser.name}</h3>
-                        <ExpandMoreIcon fontSize='large'  />
-                    </div>
-                    }
+                <Link to='/influencer' className='link'>Influencer</Link >
+                <Link to='/cart' className='link'>Favorites</Link >
+                {!isAuthenticated? <Link to='/login' className='link home_link' >Login</Link >:
+                <div onClick={(e)=> handleClick(e)} className=' flex navbar_menu_user_name'>
+                    <h3 className='navbar_username'>{currentUser.name}</h3>
+                    <ExpandMoreIcon fontSize='large'  />
+                </div>}
                 </Hidden> 
                 <Hidden mdUp>
                     {!open ?  (<IconButton onClick={()=>setOpen(true)}> <MenuIcon fontSize='large' /></IconButton>)

@@ -7,7 +7,7 @@ import Card from '../../Components/Card/Card'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { addItemToCart } from '../../Redux/Cart/cartAction';
+import { addToCart } from '../../Redux/Cart/cartAction';
 
 import Lightbox from 'react-image-lightbox';
 import 'react-image-lightbox/style.css';
@@ -39,7 +39,7 @@ export default function InfluencerDetailPage({match}) {
     },[dispatch, match])
 
     const handleAddToFavorite = () =>{
-        dispatch(addItemToCart(user))
+        dispatch(addToCart(match.params.id))
         history.push('/cart')
     }
     
@@ -90,7 +90,7 @@ export default function InfluencerDetailPage({match}) {
                     Send Message
                     <ChatIcon />
                 </button>
-                <button onClick={() =>handleAddToFavorite()} className='flex favorite_btn'>
+                <button onClick={handleAddToFavorite} className='flex favorite_btn'>
                     Add to Favorite
                     <FavoriteBorderIcon />
                 </button>

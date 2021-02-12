@@ -11,6 +11,7 @@
 .logo{
     margin: 0 60px;
     font-size: 20px;
+    cursor: pointer;
 }
 .links{ margin-right: 60px;}
 .link{

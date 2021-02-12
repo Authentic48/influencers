@@ -34,7 +34,7 @@ export default function CartRow({user}) {
                         Send Message
                         <MessageIcon />
                     </button>
-                    <button onClick={() => dispatch(removeItemCart(user.id)) } className='remove flex_center'>
+                    <button onClick={() => dispatch(removeItemCart(user._id)) } className='remove flex_center'>
                         Remove 
                         <DeleteIcon />
                     </button>
