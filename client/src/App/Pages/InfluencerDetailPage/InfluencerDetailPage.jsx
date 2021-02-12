@@ -107,7 +107,7 @@ export default function InfluencerDetailPage({match}) {
             )}
         </div>
         <div style={{display:'flex', alignItems:'center', justifyContent:'center', flexWrap:'wrap'}}>
-            {otherInfluencer?.map(user => <Card key={user.id} user={user} />)}
+            {otherInfluencer?.map(user => <Card key={user._id} user={user} />)}
 
         </div>
        </>
