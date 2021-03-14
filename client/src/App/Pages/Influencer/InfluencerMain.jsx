@@ -28,27 +28,33 @@ export default function InfluencerMain({history}) {
         dispatch(getInfluencer())
     },[dispatch])
 
+   
     const {loading, influencer } = useSelector(state => state.influencerProfile)
     console.log(influencer)
     
     if(!influencer || loading) return <Loading />
     const profile = influencer?.find(i => i.user === currentUser._id )
-  
+   
+
     return (
         <>
         <Navbar />
-        
+        {!profile?
+        <div className='flexCol' style={{height: "100vh"}}>
+            <button className='btn_secondary' onClick={()=> history.push('/create-profile')} >Create Profile</button>
+        </div>:
+        <>
         <div className='InfluencerMain' >
             <Sidebar>
                 <SidebarRow 
                     title='Profile' 
                     Icon={AccountCircleIcon} 
-                    onClick={()=>history.push(`/influencer-profile-detail/${profile._id}`)} 
+                    onClick={()=>history.push(`/influencer-profile-detail/${profile?._id}`)} 
                 />
                 <SidebarRow 
                     title='Edit Profile' 
                     Icon={BorderColorIcon} 
-                    onClick={()=>history.push(`/editprofile/${profile._id}`)} 
+                    onClick={()=>history.push(`/editprofile/${profile?._id}`)} 
                 />
                 <SidebarRow title='Orders' Icon={FormatListNumberedIcon} />
                 <SidebarRow title='Chat ' Icon={ChatIcon}/>
@@ -57,37 +63,38 @@ export default function InfluencerMain({history}) {
                {/* <h1> {profile.name}, Influencer Panel</h1> */}
                <div className='influencer_panel  '>
                    <div className='influencer_panel_left'>
-                       <img src={profile.image} alt ={`Get in touch with the best influencer ${profile.name}`} />
-                       <h3 className='influencer_main_text'>About {profile.name}</h3>
-                       <p className='influencer_small_text'>{profile.bio}</p>
+                       <img src={profile?.image || ""} alt ={`Get in touch with the best influencer ${profile?.name}`} />
+                       <h3 className='influencer_main_text'>About {profile?.name}</h3>
+                       <p className='influencer_small_text'>{profile?.bio}</p>
                    </div>
                    <div className='influencer_panel_right'>
                         <h3 className='influencer_main_text_blue'>Influencer & Youtuber</h3> 
                         <div className='flex'>
-                            <p className='reviews_num'>({profile.numReviews})</p>
+                            <p className='reviews_num'>({profile?.numReviews})</p>
                             <Box component="fieldset" mb={3} borderColor="transparent">
                                 <Rating name="pristine" value={4.5} />
                             </Box>
                         </div>
                         <h3 className='influencer_main_text'>Category</h3>
                        <div className='category_container' >
-                            {profile.category.map(category => 
+                            {profile?.category.map(category => 
                             <p className='influencer_smaller_text' key={category}>{category}</p>)}
                        </div>
                     <div style={{marginTop: '3rem'}}>
                         <h3 className='personal_data'>personal data</h3>
-                        <Row leftText={'Phone'} rightText={profile.phoneNumber} />
-                        <Row leftText={'Price'} rightText={profile.price} />
-                        <Row leftText={'city'} rightText={profile.city} />
-                        <Row leftText={'Instagram username'} rightText={profile.fbAccount} />
-                        <Row leftText={'Followers'} rightText={profile.fbFriends} />
-                        <Row leftText={'Facebook username'} rightText={profile.instAccount} />
-                        <Row leftText={'Friends'} rightText={profile.instFollowers} />
+                        <Row leftText={'Phone'} rightText={profile?.phoneNumber} />
+                        <Row leftText={'Price'} rightText={profile?.price} />
+                        <Row leftText={'city'} rightText={profile?.city} />
+                        <Row leftText={'Instagram username'} rightText={profile?.fbAccount} />
+                        <Row leftText={'Followers'} rightText={profile?.fbFriends} />
+                        <Row leftText={'Facebook username'} rightText={profile?.instAccount} />
+                        <Row leftText={'Friends'} rightText={profile?.instFollowers} />
                     </div>
                    </div>
                </div>
            </div>
         </div>
+        </>}
         </>
     )
 }

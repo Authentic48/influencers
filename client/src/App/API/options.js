@@ -49,7 +49,7 @@ export const initialValues={
     category:[],
     price: '',
     city: '',
-    image: 'https://teenntimes.files.wordpress.com/2019/06/img_8354.jpg?w=1125&h=768&crop=1',
+    image: "https://i1.sndcdn.com/artworks-000394157898-6r8ziv-t500x500.jpg",
     fbAccount:'',
     fbFriends: '',
     instAccount : '',

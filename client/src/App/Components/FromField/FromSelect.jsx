@@ -46,9 +46,9 @@ export default function FromSelect({label,options, ...props}) {
         <FormControl className={classes.formControl} error={meta.touched && !!meta.error}>
          <InputLabel id="demo-mutiple-name-label">{label}</InputLabel>
             <Select 
-            id="demo-mutiple-name-label"
             MenuProps={MenuProps}
-
+            id="outlined-select-currency-native"
+            select
             name='category'
             value={field.value}
             onChange={(e,d) => helpers.setValue(d.value) }
@@ -57,9 +57,11 @@ export default function FromSelect({label,options, ...props}) {
             error={meta.error && meta.touched}
             style={{
                 marginBottom: '0.5rem',
-                padding: 10,
             }}
-            input={<Input />}
+            SelectProps={{
+              native: true,
+            }}
+            // input={<Input />}
             >
                 {options.map(option => (
                 <MenuItem key={option.value} value={option.value}>{option.label} </MenuItem>
