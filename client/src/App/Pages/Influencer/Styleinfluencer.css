@@ -27,7 +27,7 @@
 }
 .influencer_small_text{
     font-weight: 200;
-    width: 80%;
+    width: 90%;
 }
 .category_container{
     width: 80%;
@@ -42,7 +42,7 @@
     margin-bottom: 1rem;
 }
 .influencer_smaller_text{
-    width:25%;
+    width:35%;
     margin-bottom: 10px;
     font-weight: 200;
 }

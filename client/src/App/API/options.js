@@ -49,7 +49,7 @@ export const initialValues={
     category:[],
     price: '',
     city: '',
-    image: "https://i1.sndcdn.com/artworks-000394157898-6r8ziv-t500x500.jpg",
+    image: "https://pbs.twimg.com/profile_images/1301997893923020805/irG2Vq52_400x400.jpg",
     fbAccount:'',
     fbFriends: '',
     instAccount : '',

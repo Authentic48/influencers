@@ -62,7 +62,6 @@ const influencerSchema = mongoose.Schema({
     },
     youtubeAccount:{
         type: String,
-        required : true,
     },
     isYoutuber:{
         type: Boolean,

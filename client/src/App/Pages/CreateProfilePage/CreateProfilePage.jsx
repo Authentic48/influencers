@@ -41,7 +41,7 @@ export default function CreateProfilePage({history}) {
                      onSubmit={(values) => {
                         dispatch(createProfile(values))
                         enqueueSnackbar('Success, You Create New Profile',{variant : 'success'} );
-                        history.goBack()
+                        history.push('/influencer')
                      }}
                      validationSchema={validationSchema}
                      initialValues={initialValues}
