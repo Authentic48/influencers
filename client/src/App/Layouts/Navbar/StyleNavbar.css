@@ -23,7 +23,7 @@
     border-bottom: 3px solid #2168A6;
     transition: all ease-in 0.2s;
 }
-.link:hover{ border-bottom: 3px solid #F294C0;}
+
 .home_link{ width: 60px;}
 
 .navbar_menu_user_name{
