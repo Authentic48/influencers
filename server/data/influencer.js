@@ -35,6 +35,24 @@ const influencers =[
         phoneNumber: "4554676553553"
         
     },
+    {
+        name: 'Sara Sabry',
+        bio: 'this is Sara Sabry bio',
+        city: 'Krasnoyarsk',
+        price: 400,
+        image: 'https://teenntimes.files.wordpress.com/2019/06/img_8354.jpg?w=1125&h=768&crop=1',
+        category: ['sport', 'cars', 'clothing'],
+        fbAccount: 'SaraSbary',
+        fbFriends: 509670,
+        instAccount: 'SaraSbary',
+        instFollowers: 125000,
+        isYoutuber: true,
+        youtubeAccount: '@SaraSbary',
+        youtubeSubscribers: 356805,
+        numReviews: 7,
+        phoneNumber: "4554676553553"
+        
+    },
 ]
 
 export default  influencers;

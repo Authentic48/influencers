@@ -1,55 +1,45 @@
-.about_intro{
-    width: 95%;
-    margin-left: 2.5%;
-    border-radius: 40px;
+.details__page{
+    width: 85%;
+    margin: auto;
+    margin-top: 120px;
     height: auto;
-    background-color: #dbeeff;    
-    border-bottom-right-radius: 170px;
-    border-bottom-left-radius: 170px;
-    margin-bottom: 80px;
-    margin-top: 20rem;
-}
-.about_intro img{
-    height: 250px;
-    width: 250px;
-    object-fit: cover;
-    border-radius: 123px;
-    opacity: 0.7;
-    cursor: pointer;
-    margin-top: -100px;
-    box-shadow: 0px 5px 17px -7px rgba(0, 0, 0, 0.4); 
-    -webkit-transform: scale(1.15);
-    -ms-transform: scale(1.15);
-    transform: scale(1.15);
-    -webkit-transition: -webkit-transform 0.5s, opacity 0.5s;
-    transition: transform 0.5s, opacity 0.5s;
-    margin-bottom: 2.5rem;
-}
-.about_intro img:hover{
-    border: 4px solid white;
-    box-shadow: none;
-    opacity: 1;
-    -webkit-transform: scale(1.03);
-    -ms-transform: scale(1.03);
-    transform: scale(1.03);
-}
-.socials_media{ 
-    margin: 0rem 4rem;
+    min-height: 80vh;
     display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
+    border-radius: 20px;
+    box-shadow: 7px 5px 14px -6px rgba(0,0,0,0.65);
+    margin-bottom: 50px;
+}
+.details__page p{
+    color: gray;
+}
+.mr{
+    margin-left: 3px;
+}
+.details__page > img{
+    width: 330px;
+    margin: auto 40px;
+    height: 330px;
+    border-radius: 20px;
+    object-fit: cover;
+}
 
+.inf_name{
+    margin-top: 50px;
+    color: #2168A6;
+    margin-bottom: 10px;
 }
-.about_intro h2{
-    margin: 1rem 0rem !important ;
-    color: #2168A6 !important;
-    font-size: 33px;
+.inf_num_reviews{
+    margin-top: -30px;
+    margin-left: 10px;
 }
-.influncuer_category{
-    margin: 2rem 3rem !important ;
-    color: #2168A6 !important;
-    font-size: 33px;
+
+.inf_info_title{
+    margin-top: 30px;
+    margin-bottom: 10px;
 }
+.des{width: 80%;}
+
+
 .weird_container{
     display: flex;
     align-items: center;
@@ -68,94 +58,4 @@
     background-color: #a1d0fa;
    
 }
-.description{
-    width: 80%;
-    font-size: 18px;
-    text-align: center;
-}
-.send_message{
-    background-color: #ffff;
-    border: 1px solid #2168A6;
-    color: #2168A6 !important;
-    padding: 15px 20px;
-    font-size: 17px;
-    border-radius: 8px;
-    margin: 2rem;
-}
 
-.report_btn{
-    background-color: #ffff;
-    border: 1px solid #F2A71B;
-    color: #F2A71B !important;
-    padding: 15px 20px;
-    font-size: 17px;
-    border-radius: 8px;
-    margin: 2rem;
-}
-.favorite_btn{
-    background-color: #ffff;
-    border: 1px solid #F294C0;
-    color: #F294C0 !important;
-    padding: 15px 20px;
-    font-size: 17px;
-    border-radius: 8px;
-    margin: 2rem;
-}
-.send_message:hover, .favorite_btn:hover, .report_btn:hover{
-    box-shadow: 0 30px 100px 30px rgba(118,118,197,0.1);
-    border: none;
-}
-.buttons_group{
-    margin-bottom: 100px;
-}
-
-
-
-@media(max-width:860px){
-    .socials_media{
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
-    .buttons_group{
-        flex-direction: column;
-    }
-    .send_message , .favorite_btn, .report_btn{
-        width: 70%;
-        text-align: center;
-        justify-content: center;
-    }
-    .category_data_weird{
-        justify-content: center;
-        flex-direction: column;
-    }
-    .influncuer_category{
-        margin-top: 3rem !important;
-        margin-bottom: 0rem;
-        font-size: 28px;
-    }
-    .weird_container{
-        justify-content: center;
-        margin-top: 0px;
-    }
-    
-}
-
-@media(max-width: 500px){
-    .send_message , .favorite_btn, .report_btn{
-        width: 90%;
-        margin: 1rem;
-    }
-    .about_intro img{
-        height: 150px;
-        width: 150px;
-        object-fit: cover;
-        border-radius: 75px;
-        margin-top: -60px;
-    }
-    .description{
-        width: 95%;
-        margin-left: 2.5%;
-    }
-    .about_intro h1{ font-size: 27px !important;}
-}

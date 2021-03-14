@@ -64,7 +64,7 @@ a{
   background-color: #F294C0;
   color: white;
   text-transform: uppercase;
-  font-weight: bold;
+  /* font-weight: bold; */
   border: 1px solid white;
   padding: 12px 24px;
   border-radius: 25px;
@@ -81,18 +81,20 @@ a{
 }
 
 .btn_secondary{
+  
   background-color: #2e81ca;
   color: white;
   text-transform: uppercase;
-  font-weight: bold;
+  /* font-weight: bold; */
   border: 1px solid white;
-  padding: 12px 24px;
+  padding: 14px 24px;
   border-radius: 25px;
 }
 
 .btn_secondary:hover{
-  background-color: #2168A6;
-
+  border: 1px solid #2e81ca;
+  color: #2e81ca;
+  background-color: white;
 }
 .btn_secondary2{
   background-color: white;

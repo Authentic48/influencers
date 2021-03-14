@@ -18,9 +18,6 @@ export default function Card({user}) {
          </div>
          <div className='card_detail flexCol'>
             <h3 className='influencer_name'>{user.name}</h3>
-            <h3 className='influencer_price'> 
-                {user.price} EGP <span> per 3 stories</span>
-            </h3>
          </div>
          <div className='flexCol'>
              <button onClick={() => history.push(`/influencer-profile-detail/${user._id}`)} className='btn_secondary2 flex'>

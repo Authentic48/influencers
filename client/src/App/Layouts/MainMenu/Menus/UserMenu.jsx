@@ -21,12 +21,13 @@ export default function InfluencerMenu({currentUser, setAnchorEl,setOpenMenu}) {
         dispatch(userLogout())
         handleClose()
     }
+
     return (
         <>
-            <MenuItem style={{ width: 220  }}  onClick={()=> history.push(`/user-profile/${currentUser._id}`)}>
+            <MenuItem style={{ width: 220  }}  onClick={()=> history.push(`/user-profile/${currentUser.id}`)}>
                 Account
             </MenuItem>
-            <MenuItem   onClick={()=> history.push(`/user-order/${currentUser._id}`)}>
+            <MenuItem   onClick={()=> history.push(`/user-order/${currentUser.id}`)}>
                 Orders
             </MenuItem>
             <MenuItem    onClick={handleLogout}>
