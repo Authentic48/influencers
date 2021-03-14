@@ -17,17 +17,34 @@ import FacebookIcon from '@material-ui/icons/Facebook';
 import YouTubeIcon from '@material-ui/icons/YouTube';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import Rating from '@material-ui/lab/Rating';
-import { IconButton ,Box } from '@material-ui/core';
+import { IconButton ,Box, TextField, MenuItem } from '@material-ui/core';
 
 import './style.css'
 
-
+const currencies = [
+    {
+      value: '100',
+      label: 'Post',
+    },
+    {
+      value: '90',
+      label: '3 Stories',
+    },
+    {
+      value: '160',
+      label: 'Post - 3 Stories',
+    },
+    {
+      value: '150',
+      label: 'Package',
+    },
+  ];
+  
 
 
 
 
 export default function InfluencerDetailPage({match}) {
-
 
     const { 
         influencerById: user, 
@@ -35,6 +52,7 @@ export default function InfluencerDetailPage({match}) {
         otherInfluencer } = useSelector(state=> state.influencerProfile)
         
     const [open, setOpen ] = useState(false)
+    const [ select, setSelect ] = useState("")
     const dispatch = useDispatch()
     const history = useHistory()
 
@@ -46,9 +64,10 @@ export default function InfluencerDetailPage({match}) {
         dispatch(addToCart(match.params.id))
         history.push('/cart')
     }
+
+    console.log(select)
     
     if(loading || !user) return <Loading />
-    console.log(user , 'users')
     return (
         <>
             <Navbar />
@@ -98,8 +117,24 @@ export default function InfluencerDetailPage({match}) {
                         </div>))
                     }
                     </div>
+                    <TextField
+                        id="outlined-select-currency-native"
+                        select
+                     
+                        label="Select Your Package"
+                        value={select}
+                        onChange={(e) => setSelect(e.target.value)}
+                        variant="outlined"
+                        style={{width: 300, margin: 20}}
+                    >
+                        {currencies.map((option) => (
+                            <MenuItem key={option.value} value={option.value}>
+                            {option.label}
+                            </MenuItem>
+                        ))}
+                    </TextField>
                     <div style={{marginTop: 40, marginBottom: 30}} className='flex'> 
-                        <button className='btn_secondary'>BooK Now for 1220$</button>
+                        <button className='btn_secondary'>Request order for {select}$</button>
                         <button className='btn_main flex_center' style={{width: 170, marginLeft: 40}}  onClick={handleAddToFavorite} >
                             Add To  <FavoriteBorderIcon style={{marginLeft: 10}} />
                         </button>
