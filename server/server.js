@@ -1,35 +1,52 @@
-import express from 'express';
-import connectDB from './Config/db.js'
-import dotenv from 'dotenv'
-import userRouter from './Routes/userRoute.js'
-import profile from './Routes/influencerRoute.js'
-import report from './Routes/reportRoute.js'
+const express = require('express')
+const mongoose = require('mongoose')
+const morgan = require('morgan')
+const dotenv = require('dotenv')
+const passport = require('passport')
+const session = require('express-session')
+const connectDB = require('./config/db')
+const colors = require('colors')
+const authRoute = require('./routes/GoogleAuthRoute')
+const userRouter = require('./routes/userRoute')
+const profile = require('./routes/influencerRoute')
+const report = require('./routes/GoogleAuthRoute')
+const {errorHandler, notFound } = require('./middleware/errorHandler')
 
-import uploadRoute from './Routes/uploadRoute.js'
-import path from 'path'
+dotenv.config()
 
-import { notFound, errorHandler } from './middleware/errorHandler.js'
-import morgan from 'morgan'
 
 connectDB()
-
 dotenv.config()
 
 const app = express()
 
+// Passport config
+require('./config/passport')(passport)
 
+// Sessions
+app.use(
+    session({
+      secret: 'keyboard cat',
+      resave: false,
+      saveUninitialized: false,
+    //   store: new MongoStore({ mongooseConnection: mongoose.connection }),
+    })
+  )
 
 if(process.env.NODE_ENV === 'development')
 {
     app.use(morgan('dev'))
 }
 app.use(express.json())
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/api/users', userRouter)
 app.use('/api/influencers', profile)
 app.use('/api/reports', report)
+// app.use('/api/upload', uploadRoute)
+app.use('/auth', authRoute)
 
-app.use('/api/upload', uploadRoute)
 
 const PORT = process.env.PORT || 5000;
 

@@ -1,15 +1,15 @@
-import mongoose from 'mongoose';
-import dotenv from 'dotenv';
-import colors from 'colors'
+const mongoose = require('mongoose');
+const dotenv = require('dotenv');
+const colors = require('colors')
 
-import users from './data/user.js'
-import User from './Models/userModel.js'
-import Influencer from './Models/InfluencerModel.js'
-import Report from './Models/ReportModel.js'
+const users = require('./data/user.js')
+const User = require('./Models/userModel.js')
+const Influencer = require('./Models/InfluencerModel.js')
+const Report = require('./Models/ReportModel.js')
 
-import connectDB from './config/db.js'
-import influencers from './data/influencer.js'
-import reports from './data/report.js'
+const connectDB = require('./config/db.js')
+const influencers = require('./data/influencer.js')
+const reports = require('./data/report.js')
 
 
 dotenv.config();

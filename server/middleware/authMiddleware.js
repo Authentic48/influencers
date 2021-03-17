@@ -1,8 +1,8 @@
-import jwt from 'jsonwebtoken'
-import asyncHandler from 'express-async-handler'
-import User from '../models/userModel.js'
+const jwt =  require('jsonwebtoken')
+const asyncHandler =  require('express-async-handler')
+const User =  require('../models/userModel.js')
 
-export const protect = asyncHandler(async (req, res, next) => {
+const protect = asyncHandler(async (req, res, next) => {
   let token
 
   if (
@@ -32,7 +32,7 @@ export const protect = asyncHandler(async (req, res, next) => {
   }
 })
 
-export const admin = (req, res, next) => {
+const admin = (req, res, next) => {
   if (req.user && req.user.isAdmin) {
     next()
   } else {
@@ -41,7 +41,7 @@ export const admin = (req, res, next) => {
   }
 }
 
-export const influencer = (req, res, next) => {
+const influencer = (req, res, next) => {
   if (req.user && req.user.isInfluencer) {
     next()
   } else {
@@ -49,5 +49,7 @@ export const influencer = (req, res, next) => {
     throw new Error('Not authorized as an influencer')
   }
 }
+
+module.exports = { influencer, admin, protect }
 
 

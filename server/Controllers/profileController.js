@@ -1,12 +1,12 @@
 
-import User from '../models/userModel.js'
-import Influencer from '../models/influencerModel.js'
-import asyncHandler from 'express-async-handler'
+const User = require('../models/userModel.js')
+const Influencer = require('../models/influencerModel.js')
+const asyncHandler = require('express-async-handler')
 
 // @desc    Influencer
 // @route   PUT /api/influencers
 // @access  Public
-export const getProfile = asyncHandler(async (req, res) => {
+const getProfile = asyncHandler(async (req, res) => {
     
     const pageSize = 12
     const page = Number(req.query.pageNumber) || 1
@@ -27,7 +27,7 @@ export const getProfile = asyncHandler(async (req, res) => {
 // @desc    Influencer
 // @route   PUT /api/influencers
 // @access  Private/Influencer
-export const updatedProfile = asyncHandler(async (req, res) => {
+const updatedProfile = asyncHandler(async (req, res) => {
 
     const profile = await Influencer.findById(req.params.id)
 
@@ -61,7 +61,7 @@ export const updatedProfile = asyncHandler(async (req, res) => {
 // @desc    Influencer
 // @route   PUT /api/influencers
 // @access  Private/Influencer
-export const createProfile = asyncHandler(async (req, res) => {
+const createProfile = asyncHandler(async (req, res) => {
     
     const {name, image, bio, city, price, category, fbAccount, fbFriends, instAccount, instFollowers, youtubeAccount, youtubeSubscribers,isYoutuber, phoneNumber} = req.body;      
     const influencer = new Influencer({
@@ -93,7 +93,7 @@ export const createProfile = asyncHandler(async (req, res) => {
 // @desc    Influencer
 // @route   GET /api/influencers/:id
 // @access  Public/
-export const getProfileById = asyncHandler(async (req, res) => {
+const getProfileById = asyncHandler(async (req, res) => {
     
     const influencer = await Influencer.findById(req.params.id)
 
@@ -110,7 +110,7 @@ export const getProfileById = asyncHandler(async (req, res) => {
 // @desc    Influencer
 // @route   GET /api/influencers/:id
 // @access  Public/Admin
-export const deleteProfile = asyncHandler(async (req, res) => {
+const deleteProfile = asyncHandler(async (req, res) => {
     
     const influencer = await Influencer.findById(req.params.id)
     if(influencer){
@@ -126,7 +126,7 @@ export const deleteProfile = asyncHandler(async (req, res) => {
 // @desc    Influencer
 // @route   GET /api/influencers/:id
 // @access  Private
-export const revewProfile = asyncHandler(async (req, res) => {
+const revewProfile = asyncHandler(async (req, res) => {
     const {rating, comment} = req.body;
 
     const influencer = await Influencer.findById(req.params.id)
@@ -162,12 +162,14 @@ export const revewProfile = asyncHandler(async (req, res) => {
 // @desc    Influencer
 // @route   PUT /api/influencers
 // @access  Public
-export const getProfiles = asyncHandler(async (req, res) => {
+const getProfiles = asyncHandler(async (req, res) => {
     
    
     const influencers = await Influencer.find({})
 
     res.json(influencers )
 })
+
+module.exports = { getProfiles, revewProfile, deleteProfile, getProfileById, createProfile, updatedProfile, getProfile}
 
 

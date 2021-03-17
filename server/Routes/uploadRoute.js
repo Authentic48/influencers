@@ -22,7 +22,6 @@ aws.config.update({
 const spacesEndpoint = new aws.Endpoint(process.env.DO_END_POINT);
 const s3 = new aws.S3({
   endpoint: spacesEndpoint,
-  region: process.env.DO_DEFAULT_REGION
 });
 
 

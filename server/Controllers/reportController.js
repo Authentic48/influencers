@@ -1,10 +1,10 @@
-import  Report from '../models/reportModel.js'
-import asyncHandler from 'express-async-handler'
+const Report = require('../models/reportModel.js')
+const asyncHandler = require('express-async-handler')
 
 // @desc    Report
 // @route   PUT /api/reports
 // @access  Private / admin
-export const getReports = asyncHandler(async (req, res) => {
+const getReports = asyncHandler(async (req, res) => {
     
     const reports = await Report.find({})
 
@@ -15,7 +15,7 @@ export const getReports = asyncHandler(async (req, res) => {
 // @desc    Report
 // @route   PUT /api/reports/:id
 // @access  Private / admin
-export const getReportById = asyncHandler(async (req, res) => {
+const getReportById = asyncHandler(async (req, res) => {
     
     const report = await Report.findById(req.params.id)
     if(report)
@@ -31,7 +31,7 @@ export const getReportById = asyncHandler(async (req, res) => {
 // @desc    Report
 // @route   POST /api/reports/create
 // @access  Private /
-export const createReport = asyncHandler(async (req, res) => {
+const createReport = asyncHandler(async (req, res) => {
     
     const { description, infName, influencer } = req.body;
 
@@ -51,3 +51,5 @@ export const createReport = asyncHandler(async (req, res) => {
     res.send(`Report sent successfully, we will get in touch with you shortly`)
  
 })
+
+module.exports = { createReport, getReportById, getReports }

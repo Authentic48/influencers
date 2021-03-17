@@ -1,6 +1,6 @@
-import express from 'express'
-import {protect, admin, influencer} from '../middleware/authMiddleware.js'
-import { getProfile, createProfile, updatedProfile, getProfileById, deleteProfile, revewProfile, getProfiles } from '../Controllers/profileController.js'
+const express = require('express')
+const { protect, admin, influencer } = require('../middleware/authMiddleware.js')
+const { getProfile, createProfile, updatedProfile, getProfileById, deleteProfile, revewProfile, getProfiles } = require('../Controllers/profileController.js')
 
 const router = express.Router()
 
@@ -18,4 +18,4 @@ router.route('/profile/:id')
 router.route('/profile').get(protect,  getProfiles)
 
 
-export default router;
+module.exports = router;

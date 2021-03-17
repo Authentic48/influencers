@@ -8,4 +8,4 @@ const reports =[
     },
 ]
 
-export  default reports
+module.exports = reports;

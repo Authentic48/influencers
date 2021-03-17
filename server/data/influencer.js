@@ -55,4 +55,4 @@ const influencers =[
     },
 ]
 
-export default  influencers;
+module.exports =  influencers

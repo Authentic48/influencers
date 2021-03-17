@@ -1,4 +1,4 @@
-import mongoose from 'mongoose';
+const mongoose =  require('mongoose');
 
 
 const reviewSchema = mongoose.Schema({
@@ -94,4 +94,4 @@ const influencerSchema = mongoose.Schema({
 
 const influencer = mongoose.model('Influencer', influencerSchema)
 
-export default influencer
+module.exports = influencer
