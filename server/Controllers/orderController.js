@@ -49,13 +49,34 @@ const getOrder = asyncHandler(async (req, res) => {
 const getAllOrders = asyncHandler(async (req, res) => {
     const orders = await Order.find({  })
     
-      if (orders) {
-        res.json(orders)
-      } else {
-        res.status(404)
-        throw new Error('No orders in DB')
-    }
-   
+    res.json(orders)
 })
 
-module.exports = { createOrder, getOrder, getAllOrders }
+// @desc   Update order To PAid
+//@route   PUT /api/orders/orderId/pay
+//@Access  Private
+const updatePaidOrder = asyncHandler(async (req, res) => {
+    const order = await Order.findById(req.params.id)
+    
+      if (order) {
+        order.isPaid = true;
+        order.paidAt = Date.now();
+        order.paymentResult ={
+          id: req.params.id,
+          status : req.params.status,
+          updated_time :req.params.updated_time,
+          email_address:  req.params.email_address
+        }
+  
+        const updatedOrder = await order.save();
+  
+        res.json(updatedOrder);
+  
+      } else {
+        res.status(404)
+        throw new Error('Order not found')
+      }
+   
+  })
+
+module.exports = { createOrder, getOrder, getAllOrders, updatePaidOrder }

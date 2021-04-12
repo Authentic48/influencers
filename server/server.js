@@ -48,6 +48,10 @@ app.use('/api/reports', report)
 app.use('/auth', authRoute)
 app.use('/api/orders', orderRoute)
 
+app.get('/api/config/paypal',(req, res)=>{
+  res.send(process.env.PAYPAL_CLIENT_ID)
+})
+
 
 
 const PORT = process.env.PORT || 5000;
