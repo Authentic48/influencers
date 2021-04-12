@@ -85,9 +85,7 @@ const createProfile = asyncHandler(async (req, res) => {
     })  
     
     const createdInfluencer = await influencer.save();
-    res.status(201).json(createdInfluencer)
-
-   
+    res.status(201).json(createdInfluencer)  
 })
 
 // @desc    Influencer
