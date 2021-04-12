@@ -10,10 +10,10 @@ const authRoute = require('./routes/GoogleAuthRoute')
 const userRouter = require('./routes/userRoute')
 const profile = require('./routes/influencerRoute')
 const report = require('./routes/GoogleAuthRoute')
+const orderRoute = require('./routes/orderRoute')
 const {errorHandler, notFound } = require('./middleware/errorHandler')
 
 dotenv.config()
-
 
 connectDB()
 dotenv.config()
@@ -46,6 +46,8 @@ app.use('/api/influencers', profile)
 app.use('/api/reports', report)
 // app.use('/api/upload', uploadRoute)
 app.use('/auth', authRoute)
+app.use('/api/orders', orderRoute)
+
 
 
 const PORT = process.env.PORT || 5000;
