@@ -12,7 +12,7 @@ import { useSnackbar } from 'notistack';
 
 import {  citiesData, CategoriesOptions } from '../../API/options'
 
-import Navbar from '../../Layouts/Navbar/Navbar';
+
 import FromInput from '../../Components/FromField/FormInput';
 import FromSelect from '../../Components/FromField/FromSelect'
 import Loading from '../../Common/Loading/Loading'
@@ -44,7 +44,6 @@ export default function EditInfluencer({match, history}) {
    // console.log(influencerById)
     return (
        <>
-        <Navbar />
         <div className='create_profile_app'>
          <div className='create_profile'>
                <h1>Edit influenceur profile</h1>

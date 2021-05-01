@@ -4,7 +4,6 @@ import Alert from '../../Common/Alert/Alert'
 import { useSelector } from 'react-redux'
 
 import './StyleCartPage.css'
-import Navbar from '../../Layouts/Navbar/Navbar'
 
 export default function CartPage() {
 
@@ -12,7 +11,7 @@ export default function CartPage() {
 
     return (
         <>
-        <Navbar />
+  
          <div className='cart_page'>
             <div className='cart_row_group' >
                 {

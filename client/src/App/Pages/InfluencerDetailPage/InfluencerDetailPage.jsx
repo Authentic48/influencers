@@ -21,27 +21,24 @@ import { IconButton ,Box, TextField, MenuItem } from '@material-ui/core';
 
 import './style.css'
 
-const currencies = [
+const options = [
     {
-      value: '100',
-      label: 'Post',
+        value: '100',
+        label: 'Post',
     },
     {
-      value: '90',
-      label: '3 Stories',
+        value: '90',
+        label: '3 Stories',
     },
     {
-      value: '160',
-      label: 'Post - 3 Stories',
+        value: '160',
+        label: 'Post - 3 Stories',
     },
     {
-      value: '150',
-      label: 'Package',
+        value: '150',
+        label: 'Package',
     },
-  ];
-  
-
-
+];
 
 
 export default function InfluencerDetailPage({match}) {
@@ -127,14 +124,14 @@ export default function InfluencerDetailPage({match}) {
                         variant="outlined"
                         style={{width: 300, margin: 20}}
                     >
-                        {currencies.map((option) => (
+                        {options.map((option) => (
                             <MenuItem key={option.value} value={option.value}>
                             {option.label}
                             </MenuItem>
                         ))}
                     </TextField>
                     <div style={{marginTop: 40, marginBottom: 30}} className='flex'> 
-                        <button className='btn_secondary'>Request order for {select}$</button>
+                        <button className='btn_secondary' onClick={()=>history.push(`/order/${user.name}/${user._id}`)}>Request order for {select}$</button>
                         <button className='btn_main flex_center' style={{width: 170, marginLeft: 40}}  onClick={handleAddToFavorite} >
                             Add To  <FavoriteBorderIcon style={{marginLeft: 10}} />
                         </button>

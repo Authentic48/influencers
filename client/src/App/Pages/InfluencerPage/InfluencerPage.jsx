@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 
 import Loading from '../../Common/Loading/Loading';
-import Navbar from '../../Layouts/Navbar/Navbar';
 import Card from '../../Components/Card/Card'
 import Paginate from '../../Components/Paginate/Paginate';
 import SearchIcon from '@material-ui/icons/Search';
@@ -30,10 +29,9 @@ export default function InfluencerPage({match}) {
     console.log(influencer, "InfluencerPage")
     return (
         <>
-        <Navbar />
         <div className='search_input'>
            {openSearch ? <SearchInput placeholder='Search for influencers' Icon={SearchIcon} />
-                : 
+                :  
                 <div className='icon_container'> 
                    <IconButton  onClick={() =>setOpenSearch(true)}>
                        <SearchIcon  style={{color: '#2168A6'}}/> 

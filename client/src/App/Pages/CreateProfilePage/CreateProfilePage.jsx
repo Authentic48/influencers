@@ -7,7 +7,6 @@ import { Button, Card } from '@material-ui/core'
 import { initialValues, citiesData, CategoriesOptions } from '../../API/options'
 
 import './StyleCreateProfile.css'
-import Navbar from '../../Layouts/Navbar/Navbar';
 import FromInput from '../../Components/FromField/FormInput';
 import FromSelect from '../../Components/FromField/FromSelect'
 import { useDispatch } from 'react-redux'
@@ -32,7 +31,7 @@ export default function CreateProfilePage({history}) {
    const { enqueueSnackbar } = useSnackbar();
     return (
        <>
-        <Navbar />
+       
         <div className='create_profile_app'>
          <div className='create_profile'>
                <h1>Create influenceur profile</h1>

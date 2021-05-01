@@ -11,7 +11,6 @@ import FormatListNumberedIcon from '@material-ui/icons/FormatListNumbered';
 export default function UserOrders({history}) {
     return (
         <>
-        <Navbar />
         <Sidebar>
             <SidebarRow title='Profile' Icon={AccountCircleIcon}/>
             <SidebarRow title='Orders'  Icon={FormatListNumberedIcon}/>

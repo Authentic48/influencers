@@ -8,7 +8,7 @@ import { Formik, Form, Field }  from 'formik'
 import * as Yup from 'yup'
 
 import FormInput from '../../Components/FromField/FormInput';
-import Navbar from '../../Layouts/Navbar/Navbar';
+// import Navbar from '../../Layouts/Navbar/Navbar';
 
 import { Button, Card } from '@material-ui/core';
 import Loading from '../../Common/Loading/Loading';
@@ -45,7 +45,7 @@ export default function AdminControlUser({match, history}) {
 
     return (
         <>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className='create_profile_app'>
             <div className='create_profile'>
                 <h1>Here you can update Users</h1>

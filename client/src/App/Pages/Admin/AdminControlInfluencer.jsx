@@ -4,7 +4,7 @@ import { getInfluencer } from '../../Redux/Influencer/profile/profileAction';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-import Navbar from '../../Layouts/Navbar/Navbar'
+// import Navbar from '../../Layouts/Navbar/Navbar'
 import Loading from '../../Common/Loading/Loading';
 
 import { 
@@ -36,7 +36,7 @@ export default function AdminControlInfluencer({history}) {
 
     return (
         <>
-        <Navbar />
+    
         <div style={{marginLeft: '5%', marginTop: '9rem', width:'90%', marginBottom: '4rem'}}>
             <TableContainer component={Paper}>
             <Table  aria-label="simple table">

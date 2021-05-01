@@ -4,7 +4,6 @@ import { Formik, Form }  from 'formik'
 import * as Yup from 'yup'
 
 import FormInput from '../../Components/FromField/FormInput';
-import Navbar from '../../Layouts/Navbar/Navbar'
 import Sidebar from '../../Layouts/Sidebar/Sidebar'
 import SidebarRow from '../../Layouts/Sidebar/SidebarRow/SidebarRow'
 
@@ -33,7 +32,7 @@ export default function UserMainPage({history}) {
     
     return (
         <>
-        <Navbar />
+      
         <div className='flex'>
             <Sidebar>
                 <SidebarRow title='Profile' Icon={AccountCircleIcon}/>

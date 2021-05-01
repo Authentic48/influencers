@@ -1,7 +1,5 @@
 import React, { useEffect } from 'react'
 
-
-import Navbar from '../../Layouts/Navbar/Navbar'
 import Sidebar from '../../Layouts/Sidebar/Sidebar'
 import SidebarRow from '../../Layouts/Sidebar/SidebarRow/SidebarRow'
 import Loading from '../../Common/Loading/Loading'
@@ -38,7 +36,7 @@ export default function InfluencerMain({history}) {
 
     return (
         <>
-        <Navbar />
+     
         {!profile?
         <div className='flexCol' style={{height: "100vh"}}>
             <button className='btn_secondary' onClick={()=> history.push('/create-profile')} >Create Profile</button>

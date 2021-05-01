@@ -3,7 +3,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { getReports } from '../../Redux/Report/reportAction';
 
-import Navbar from '../../Layouts/Navbar/Navbar'
+// import Navbar from '../../Layouts/Navbar/Navbar'
 import Loading from '../../Common/Loading/Loading';
 
 import { 
@@ -30,7 +30,7 @@ export default function AdminControlReports() {
     if (loading) return <Loading />
     return (
         <>
-        <Navbar />
+        {/* <Navbar /> */}
         <div style={{marginLeft: '5%', marginTop: '9rem', width:'90%', marginBottom: '4rem'}}>
             <TableContainer component={Paper}>
             <Table  aria-label="simple table">

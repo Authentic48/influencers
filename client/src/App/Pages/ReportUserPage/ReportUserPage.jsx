@@ -9,7 +9,6 @@ import FormInput from '../../Components/FromField/FormInput';
 
 import { useSnackbar } from 'notistack';
 import { Button, Card } from '@material-ui/core';
-import Navbar from '../../Layouts/Navbar/Navbar';
 
 
 const validationSchema = Yup.object({
@@ -37,7 +36,6 @@ export default function ReportUserPage({match, history}) {
 
     return (
         <>
-        <Navbar />
         <div className='create_profile_app'>
             <div className='create_profile'>
                 <h1>Here you can report influencer</h1>

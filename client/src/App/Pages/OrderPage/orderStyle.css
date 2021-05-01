@@ -1,0 +1,18 @@
+.order_top {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.order_card {
+  width: 60%;
+  margin-left: 20%;
+  padding: 30px;
+  margin-bottom: 100px;
+}
+.flex_end {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 20px;
+}

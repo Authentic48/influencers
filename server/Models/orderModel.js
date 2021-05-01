@@ -36,7 +36,7 @@ const orderSchema = mongoose.Schema({
     },
     businessDetails:{
         type: String,
-        required: true,
+        required: false,
     },
     website:{
         type: String,

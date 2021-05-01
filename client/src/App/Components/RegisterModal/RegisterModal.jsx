@@ -1,5 +1,5 @@
 import FacebookIcon from '@material-ui/icons/Facebook';
-import {Dialog, DialogTitle, DialogContent,Button,DialogActions, Typography} from '@material-ui/core/';
+import {Dialog, DialogTitle, DialogContent,Button,DialogActions} from '@material-ui/core/';
 import { useState } from 'react';
 
 import './styleModal.css'

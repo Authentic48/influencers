@@ -4,7 +4,7 @@ import { deleteUser, getUsers } from '../../Redux/Users/userActions';
 import { useDispatch, useSelector } from 'react-redux';
 
 
-import Navbar from '../../Layouts/Navbar/Navbar'
+// import Navbar from '../../Layouts/Navbar/Navbar'
 import Sidebar from '../../Layouts/Sidebar/Sidebar'
 import SidebarRow from '../../Layouts/Sidebar/SidebarRow/SidebarRow'
 import Loading from '../../Common/Loading/Loading';
@@ -46,7 +46,7 @@ export default function AdminMain({history}) {
     console.log(users)
     return (
         <>
-        <Navbar />
+        {/* <Navbar /> */}
         <div className='flex'>
             <Sidebar>
                 <SidebarRow title='users' Icon={AccountBoxIcon}/>  

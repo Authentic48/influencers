@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import RegisterForm from '../../Components/RegisterFrom/RegisterFrom'
-import Navbar from '../../Layouts/Navbar/Navbar'
 
 import './StyleRegister.css'
 
@@ -17,7 +16,6 @@ export default function RegisterPage({history}) {
 
     return (
         <>
-        <Navbar />
         <div className='flex  register_page'>
             <div className='register_left flexCol'>
                <RegisterForm />
