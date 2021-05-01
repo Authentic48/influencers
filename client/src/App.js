@@ -18,6 +18,7 @@ import AdminControlUser from "./App/Pages/Admin/AdminControlUser";
 import AdminControlInfluencer from "./App/Pages/Admin/AdminControlInfluencer";
 import AdminControlReports from "./App/Pages/Admin/AdminControlReports";
 import OrderPage from "./App/Pages/OrderPage";
+import SelectPaymentPage from "./App/Pages/SelectPaymentPage";
 import Navbar from "./App/Layouts/Navbar/Navbar";
 
 function App() {
@@ -45,11 +46,13 @@ function App() {
         <Route path="/influencer-profile/:id" component={InfluencerMain} />
         <Route path="/editprofile/:id" component={EditInfluencer} />
         <Route path="/create-profile" component={CreateProfilePage} />
-        <Route path="/order/:keyword/:id" component={OrderPage} />
 
         <Route path="/report-influencer/:id" component={ReportPage} />
         <Route path="/chat-users/:id" component={ChatPage} />
         <Route path="/user-profile/:id" component={UserMainPage} />
+        {/* order pages */}
+        <Route path="/order/:keyword/:id" component={OrderPage} />
+        <Route path="/user/selectPayment" component={SelectPaymentPage} />
         {/* Admin Page Route    */}
         <Route path="/manage-admin-panel" component={AdminMain} />
         <Route path="/admin-manage-reports" component={AdminControlReports} />

@@ -1,0 +1,44 @@
+.fawry {
+  width: 20%;
+  height: 200px;
+  object-fit: cover;
+  border: 1px solid gray;
+  margin-right: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.paypal {
+  width: 20%;
+  height: 200px;
+  object-fit: contain;
+  border: 1px solid gray;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.fawry_plus {
+  width: 20%;
+  height: 200px;
+  object-fit: cover;
+  border: 3px solid #60abec;
+  margin-right: 50px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.paypal_plus {
+  width: 20%;
+  height: 200px;
+  object-fit: contain;
+  border: 3px solid #60abec;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.order_card > h3 {
+  margin: 50px 0px;
+  text-align: center;
+  color: #2168a6;
+  font-size: 25px;
+}

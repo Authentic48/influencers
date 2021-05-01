@@ -54,7 +54,7 @@ export default function OrderPage() {
     website: "",
     instagram: "",
     phone: "",
-    email: "",
+    email: currentUser.email || "",
   };
 
   const handleSubmit = (values) => {
@@ -70,14 +70,16 @@ export default function OrderPage() {
       user: currentUser.id,
       influencer: id,
       price,
-      // package,
+      package: values.package,
       businessName,
       businessDetails,
       website,
       phone,
       email,
+      price: values.package,
     };
     dispatch(openOrder(obj));
+    history.push("/user/selectPayment");
   };
 
   return (
@@ -87,7 +89,7 @@ export default function OrderPage() {
       </div>
       <Card className="order_card">
         <Formik
-          onSubmit={(values) => console.log(values)}
+          onSubmit={(values) => handleSubmit(values)}
           initialValues={initialValues}
           validationSchema={validationSchema}
         >
