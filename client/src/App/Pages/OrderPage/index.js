@@ -1,13 +1,17 @@
 import React from "react";
 import { useHistory, useParams } from "react-router-dom";
+// form & validation
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
-
 import FormInput from "../../Components/FromField/FormInput";
-import "./orderStyle.css";
-import { Card } from "@material-ui/core";
 import FromSelect from "../../Components/FromField/FromSelect";
+// redux
+import { useDispatch, useSelector } from "react-redux";
+import { openOrder } from "../../Redux/Orders/orderActions";
+//render & style
+import { Card } from "@material-ui/core";
 import Steppers from "../../Components/Stepper";
+import "./orderStyle.css";
 
 const validationSchema = Yup.object({
   businessName: Yup.string().required().min(5),
@@ -39,8 +43,9 @@ const options = [
 export default function OrderPage() {
   const history = useHistory();
   const { id, keyword } = useParams();
+  const dispatch = useDispatch();
+  const { currentUser } = useSelector((state) => state.auth);
   const initialValues = {
-    influencer: "",
     name: keyword || "",
     package: "",
     price: "",
@@ -50,6 +55,29 @@ export default function OrderPage() {
     instagram: "",
     phone: "",
     email: "",
+  };
+
+  const handleSubmit = (values) => {
+    const {
+      price,
+      businessName,
+      businessDetails,
+      website,
+      phone,
+      email,
+    } = values;
+    const obj = {
+      user: currentUser.id,
+      influencer: id,
+      price,
+      // package,
+      businessName,
+      businessDetails,
+      website,
+      phone,
+      email,
+    };
+    dispatch(openOrder(obj));
   };
 
   return (

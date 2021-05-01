@@ -3,9 +3,10 @@ import {
   CREATE_ORDER_ERROR,
   CREATE_ORDER_REQUEST,
   CREATE_ORDER_SUCCESS,
+  OPEN_ORDER,
 } from "./orderTypes";
 
-export const createProfile = (values) => async (dispatch, getState) => {
+export const createOrder = (values) => async (dispatch, getState) => {
   try {
     dispatch({ type: CREATE_ORDER_REQUEST });
     const {
@@ -31,3 +32,8 @@ export const createProfile = (values) => async (dispatch, getState) => {
     });
   }
 };
+
+export const openOrder = (values) => ({
+  type: OPEN_ORDER,
+  payload: values,
+});
