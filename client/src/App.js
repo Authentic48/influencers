@@ -1,5 +1,4 @@
 import { Route, Switch } from "react-router-dom";
-import "./App.css";
 import CartPage from "./App/Pages/CartPage/CartPage";
 import ChatPage from "./App/Pages/ChatPage/ChatPage";
 import CreateProfilePage from "./App/Pages/CreateProfilePage/CreateProfilePage";
@@ -19,7 +18,9 @@ import AdminControlInfluencer from "./App/Pages/Admin/AdminControlInfluencer";
 import AdminControlReports from "./App/Pages/Admin/AdminControlReports";
 import OrderPage from "./App/Pages/OrderPage";
 import SelectPaymentPage from "./App/Pages/SelectPaymentPage";
+import PlaceOrderPage from "./App/Pages/PlaceOrderPage";
 import Navbar from "./App/Layouts/Navbar/Navbar";
+import "./App.css";
 
 function App() {
   return (
@@ -53,6 +54,7 @@ function App() {
         {/* order pages */}
         <Route path="/order/:keyword/:id" component={OrderPage} />
         <Route path="/user/selectPayment" component={SelectPaymentPage} />
+        <Route path="/placeOrder/:keyword" component={PlaceOrderPage} />
         {/* Admin Page Route    */}
         <Route path="/manage-admin-panel" component={AdminMain} />
         <Route path="/admin-manage-reports" component={AdminControlReports} />
