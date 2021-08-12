@@ -21,7 +21,7 @@ dotenv.config()
 const app = express()
 
 // Passport config
-require('./config/passport')(passport)
+// require('./config/passport')(passport)
 
 // Sessions
 app.use(
